@@ -1,0 +1,15 @@
+@use "sass:math";
+@use "./settings" as *;
+@use "../mixin" as *;
+
+@include mq($device){
+  .part_copyright{
+    font-size: 14px;
+    letter-spacing: 0.8px;
+    line-height: 1;
+    color: #BBC3CE;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 112px;
+  }
+}

@@ -1,0 +1,16 @@
+<div id="part_header" class="page_layout layout1">
+  <div class="layout_inner">
+    <div class="layout_container">
+      <div class="layout_width">
+
+        <div class="header_row">
+          <p class="header_site_title">
+            <!--#include virtual="/lib-index/inc/site_title_link.shtml" -->
+          </p>
+          <!--#include virtual="/lib-index/inc/header_github_logo.shtml" -->
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

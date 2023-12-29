@@ -1,0 +1,14 @@
+[
+  {
+    "demo_name" : "基本形",
+    "demo_slug" : "basic",
+    "check" : {
+      "html_check" : true,
+      "javascript_check" : true,
+      "axedevtools_check" : true,
+      "markuplint_check" : true,
+      "berowser_check" : true,
+      "readme_check" : false
+    }
+  }
+]

@@ -1,0 +1,12 @@
+@use "sass:math";
+@use "./settings" as *;
+@use "../mixin" as *;
+
+@include mq($device){
+
+  .index_common_txt1{
+    font-size: 16px;
+    letter-spacing: .8px;
+    line-height: 1.5;
+  }
+}

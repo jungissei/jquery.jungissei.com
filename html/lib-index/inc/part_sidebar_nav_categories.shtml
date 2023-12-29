@@ -1,0 +1,9 @@
+<nav id="part_sidebar_nav_categories" class="part_menu_nav" aria-label="サイドバーナビゲーション">
+
+  <h2 class="nav_title">jQuery Creations Categories</h2>
+
+  <!-- カテゴリ一覧 ナビゲーション BEGIN -->
+  <ul class="nav_items" data-site-nav="nav_items"></ul>
+  <!-- カテゴリ一覧 ナビゲーション END -->
+
+</nav>

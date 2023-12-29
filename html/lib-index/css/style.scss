@@ -1,0 +1,49 @@
+// --------------------------------------
+// Reset CSS
+// --------------------------------------
+@use "./destyle";
+
+
+// --------------------------------------
+// PC
+// --------------------------------------
+@use "./pc/layout" as *;
+
+// Modules
+@use "./pc/index_common_ttl" as *;
+@use "./pc/index_common_txt" as *;
+@use "./pc/index_common_table" as *;
+
+// Parts
+@use "./pc/part_header" as *;
+@use "./pc/part_copyright" as *;
+@use "./pc/part_menu_nav" as *;
+
+// Pages
+@use "./pc/top" as *;
+
+
+// --------------------------------------
+// PC WIDE
+// --------------------------------------
+@use "./pc_wide/layout" as *;
+
+
+
+// --------------------------------------
+// SP
+// --------------------------------------
+@use "./sp/layout" as *;
+
+// Modules
+@use "./sp/index_common_ttl" as *;
+@use "./sp/index_common_txt" as *;
+@use "./sp/index_common_table" as *;
+
+// Parts
+@use "./sp/part_header" as *;
+@use "./sp/part_copyright" as *;
+@use "./sp/part_menu_nav" as *;
+
+// Pages
+@use "./sp/top" as *;

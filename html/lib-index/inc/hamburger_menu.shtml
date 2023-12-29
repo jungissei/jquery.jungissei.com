@@ -1,0 +1,40 @@
+<div
+  id="hamburger_menu"
+  data-focus-trap="wrap"
+>
+
+  <div data-focus-trap="begin" tabindex="0"></div>
+
+  <div
+    class="hamburger_menu_inner"
+    data-simplebar
+    data-simplebar-auto-hide="false"
+  >
+    <nav id="part_hamburger_menu_nav_categories" class="part_menu_nav" aria-label="ハンバーガーメニューナビゲーション">
+      <h2 class="nav_title">jQuery Creations Categories</h2>
+
+      <!-- カテゴリ一覧 ナビゲーション BEGIN -->
+      <ul class="nav_items" data-site-nav="nav_items"></ul>
+      <!-- カテゴリ一覧 ナビゲーション END -->
+
+    </nav>
+
+    <button
+      id="hamburger_menu_close"
+      aria-controls="hamburger_menu"
+      aria-expanded="false"
+    >
+      <img
+        src="/lib-index/img/close_btn.svg"
+        alt="ハンバーガーメニューを閉じる"
+        width="18"
+        height="18"
+        loading="lazy"
+        decoding="async"
+      >
+    </button>
+  </div>
+
+  <div data-focus-trap="end" tabindex="0"></div>
+</div>
+<div id="hamburger_menu_off_bg"></div>

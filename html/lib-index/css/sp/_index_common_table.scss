@@ -1,0 +1,95 @@
+@use "sass:math";
+@use "./settings" as *;
+@use "../mixin" as *;
+
+@include mq($device){
+
+  .index_common_table1 {
+    margin-top: 8px;
+
+    table{
+      border-bottom: 1px solid #94a3b833;
+
+      caption {
+        margin-bottom: 15px;
+        font-size: 18px;
+        line-height: 1.715;
+        letter-spacing: .8px;
+      }
+      colgroup {
+        col{
+          &.table_label {
+            min-width: 200px;
+            width: 200px;
+          }
+          &.table_check_list {
+            width: 50px;
+          }
+        }
+      }
+
+      tr {
+        th,
+        td {
+          padding: 8px;
+
+          &:first-child{
+            padding-left: 0;
+
+            a{
+              color: #fff;
+              text-decoration: underline;
+              text-decoration-color: #38bdf8;
+
+              @include hover{
+                text-decoration-thickness: 2px;
+              }
+            }
+          }
+          &:not(:first-child){
+            text-align: center;
+          }
+          &:last-child{
+            padding-right: 0;
+          }
+        }
+      }
+
+      thead {
+        border-bottom: 1px solid #94a3b833;
+
+        tr {
+          th{
+            vertical-align: bottom;
+
+            .check_list_label{
+              line-height: 1;
+              white-space: nowrap;
+              writing-mode: vertical-rl;
+              font-size: 14px;
+              padding-top: 5px;
+              transform: rotate(180deg);
+            }
+          }
+        }
+      }
+
+      tbody {
+        border-bottom: 1px solid #94a3b833;
+
+        tr {
+          td{
+            line-height: 1.715;
+
+            &:first-child{
+              white-space: nowrap;
+            }
+            &:not(:first-child){
+              vertical-align: middle;
+            }
+          }
+        }
+      }
+    }
+  }
+}

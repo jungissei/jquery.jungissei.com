@@ -1,0 +1,155 @@
+@use "sass:math";
+@use "./settings" as *;
+@use "../mixin" as *;
+
+@include mq($device){
+
+  // --------------------------------------
+  // 基本レイアウト＆スタイル
+  // --------------------------------------
+  body{
+    font-family: -apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif,"Segoe UI Emoji";
+    background-color: #10172A;
+    color:#94a3b8;
+  }
+
+  #wrapper{
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  main,
+  footer{
+    width: 100%;
+  }
+
+  footer{
+    margin-top: auto;
+  }
+
+  #wrap_aside_main{
+    height: 100%;
+    width: 100%;
+
+    &.page_layout{
+      height: 100%;
+
+      .layout_inner {
+        padding-top: 55px;
+        height: calc(100% - 55px);
+
+        .layout_container {
+          height: 100%;
+
+          .layout_width {
+            display: flex;
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    aside{
+      display: none;
+    }
+
+    main{
+      width: 100%;
+    }
+  }
+
+  // --------------------------------------
+  // main
+  // --------------------------------------
+  main{
+    .main_row_separate_by_border{
+      display: block;
+      border-bottom: 1px solid #f8fafc0f;
+      padding: 16px;
+      margin-bottom: 13px;
+    }
+  }
+
+  // --------------------------------------
+  // 汎用レイアウト
+  // --------------------------------------
+  .page_layout{
+    &.layout1{
+      .layout_inner {
+
+        .layout_container {
+          max-width: 1440px;
+          width: 100%;
+          margin-right: auto;
+          margin-left: auto;
+
+          .layout_width {
+            max-width: calc(100% - 32px);
+            width: 100%;
+            margin-right: auto;
+            margin-left: auto;
+          }
+        }
+      }
+    }
+  }
+
+
+
+  // --------------------------------------
+  // ハンバーガーメニュー
+  // --------------------------------------
+  #hamburger_menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #1e293b;
+    width: 300px;
+    height: 100%;
+    z-index: 20;
+    transition: transform 0.3s, visibility 0.3s, opacity 0.3s;
+    transform: translateX(-100%);
+    visibility: hidden;
+    opacity: 0;
+
+    &.is_show{
+      transform: translateX(0);
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .hamburger_menu_inner{
+      height: 100%;
+      padding: 20px;
+    }
+  }
+
+  #hamburger_menu_close{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 18px;
+  }
+
+  #hamburger_menu_off_bg{
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #0f172acc;
+    filter: blur(4px);
+    backdrop-filter: blur(4px);
+    width: calc(100% - 300px);
+    height: 100%;
+    cursor: pointer;
+    z-index: 20;
+    transition: visibility 0.3s, opacity 0.3s;
+    visibility: hidden;
+    opacity: 0;
+
+    &.is_show{
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}

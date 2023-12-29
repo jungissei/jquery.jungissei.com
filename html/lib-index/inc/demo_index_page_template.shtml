@@ -1,0 +1,32 @@
+<script>
+
+  function get_nav_item_template(category_item){
+
+    let category_name = category_item.category_name,
+        category_slug = category_item.category_slug,
+        category_demo_length;
+
+    // カテゴリーアイテムのデータを取得
+    $.ajax({
+      url: `/${category_slug}/demos.json`,
+      type: 'GET',
+      dataType: 'json',
+    }).done(function(category_items) {
+
+      category_demo_length = category_items.length;
+
+    }).fail(function(error) {
+      console.error('Error:', error);
+    });
+
+
+    return `
+      <li class="nav_item" aria-current="page">
+        <a href="/${category_slug}" class="item_link">
+          <span class="item_name">${category_name}</span>
+          <span class="item_demos_length"><span class="length_label">デモの数</span>1</span>
+        </a>
+      </li>
+    `;
+  }
+</script>

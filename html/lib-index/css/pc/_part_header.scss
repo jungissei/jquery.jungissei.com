@@ -1,0 +1,61 @@
+@use "sass:math";
+@use "./settings" as *;
+@use "../mixin" as *;
+
+@include mq($device){
+  #part_header {
+    &.page_layout{
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 10;
+
+      .layout_inner {
+        padding-top: 2px;
+        padding-bottom: 2px;
+        background-color: #10172A;
+        border-bottom:1px solid #f8fafc0f;
+      }
+    }
+
+    .header_row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header_site_title {
+      font-weight: bold;
+      font-size: 22px;
+      letter-spacing: 0.8px;
+      line-height: 1;
+      color: #fff;
+
+      .site_title_link{
+        display: flex;
+        align-items: center;
+
+        .site_title_icon{
+          width: 50px;
+        }
+        .site_title_text{
+          margin-left: 5px;
+        }
+      }
+    }
+
+    .header_github_logo{
+      margin-left: auto;
+      width: 20px;
+
+      .logo_link{
+        transition: opacity 0.2s;
+
+        @include hover{
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}

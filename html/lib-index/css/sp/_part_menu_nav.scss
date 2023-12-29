@@ -1,0 +1,81 @@
+@use "sass:math";
+@use "./settings" as *;
+@use "../mixin" as *;
+
+@include mq($device){
+
+  .part_menu_nav {
+    .nav_title {
+      font-size: 14px;
+      line-height: 1.34;
+      letter-spacing: 0.8px;
+      color: #e2e8f0;
+    }
+
+    .nav_items {
+      border-left:1px solid  #94a3b8;
+
+      .nav_item {
+        margin-top: 8px;
+
+        .item_link {
+          padding-left: 16px;
+          display: flex;
+          align-items: center;
+          margin-left: -1px;
+          border-left-width:1px;
+          border-left-style:solid;
+          border-left-color:transparent;
+
+          @include hover{
+            border-left-color:#e5e7eb;
+
+            .item_name {
+              color: #cbd5e1;
+            }
+          }
+
+          .item_name {
+            font-size: 14px;
+            line-height: 1.715;
+            letter-spacing: 0.8px;
+            color: #94a3b8;
+          }
+          .item_demos_length {
+            background-color: #0769AD;
+            color: #fff;
+            font-size: 14px;
+            width: 18px;
+            height: 18px;
+            line-height: 18px;
+            border-radius: 50%;
+            display: inline-block;
+            text-align: center;
+            margin-left: 10px;
+            position: relative;
+            overflow: hidden;
+
+            .length_label{
+              position: absolute;
+              top: -1000%;
+              left: -1000%;
+              visibility: hidden;
+              opacity: 0;
+            }
+          }
+        }
+
+        &[aria-current="page"]{
+          .item_link {
+            border-left-color:#38bdf8;
+
+            .item_name {
+              color: #38bdf8;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+<div class="main_row_separate_by_border">
+  <button
+    id="hamburger_menu_open"
+    aria-controls="hamburger_menu"
+    aria-expanded="false"
+  >
+    <img
+      src="/lib-index/img/open_btn.svg"
+      alt="ハンバーガーメニューを開く"
+      width="18"
+      height="18"
+      loading="lazy"
+      decoding="async"
+    >
+  </button>
+</div>

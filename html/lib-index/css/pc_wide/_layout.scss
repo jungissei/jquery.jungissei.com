@@ -1,0 +1,51 @@
+@use "sass:math";
+@use "./settings" as *;
+@use "../mixin" as *;
+
+@include mq($device){
+
+  // --------------------------------------
+  // 基本レイアウト＆スタイル
+  // --------------------------------------
+  #wrap_aside_main{
+    &.page_layout{
+
+      .layout_inner {
+        padding-top: 95px;
+        height: calc(100% - 95px);
+      }
+    }
+
+    aside{
+      width: 300px;
+      height: 100%;
+      display: block;
+
+      .aside_sticky{
+        position: sticky;
+        top: 65px;
+      }
+    }
+
+    main{
+      width: calc(100% - 300px);
+    }
+  }
+
+  // --------------------------------------
+  // main
+  // --------------------------------------
+  main{
+    .main_row_separate_by_border{
+      display: none;
+    }
+  }
+
+  // --------------------------------------
+  // ハンバーガーメニュー
+  // --------------------------------------
+  #hamburger_menu,
+  #hamburger_menu_off_bg{
+    display: none;
+  }
+}
