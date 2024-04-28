@@ -3,11 +3,11 @@
     "demo_name" : "基本形",
     "demo_slug" : "basic",
     "check" : {
-      "html_check" : true,
-      "javascript_check" : true,
-      "axedevtools_check" : true,
-      "markuplint_check" : true,
-      "berowser_check" : true,
+      "html_check" : false,
+      "javascript_check" : false,
+      "axedevtools_check" : false,
+      "markuplint_check" : false,
+      "berowser_check" : false,
       "readme_check" : false
     }
   }

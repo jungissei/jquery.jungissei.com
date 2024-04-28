@@ -1,0 +1,28 @@
+@use "sass:math";
+@use "../setting" as *;
+@use "../../mixin" as *;
+
+@include mq($device){
+  body.pc_solid{
+    min-width: $pc_layout_min_width;
+
+    .page_layout{
+      &.layout1 {
+        .layout_inner {
+          .layout_container {
+            width: $pc_layout_min_width;
+            margin-right: auto;
+            margin-left: auto;
+
+            .layout_width {
+              width: calc($pc_layout_min_width - 30px);
+              margin-right: auto;
+              margin-left: auto;
+            }
+          }
+        }
+      }
+    }
+
+  }
+}

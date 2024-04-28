@@ -1,0 +1,22 @@
+// --------------------------------------
+// Reset CSS
+// --------------------------------------
+@use "./destyle";
+
+
+// --------------------------------------
+// PC
+// --------------------------------------
+@use "./pc/layout/common" as *;
+@use "./pc/layout/solid" as *;
+@use "./pc/layout/liquid" as *;
+@use "./pc/demo_common_ttl" as *;
+@use "./pc/demo_common_txt" as *;
+
+
+// --------------------------------------
+// SP
+// --------------------------------------
+@use "./sp/layout" as *;
+@use "./sp/demo_common_ttl" as *;
+@use "./sp/demo_common_txt" as *;
