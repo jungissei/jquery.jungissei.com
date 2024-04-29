@@ -9,6 +9,7 @@
 
     table{
       border-bottom: 1px solid #94a3b833;
+      width: 100%;
 
       caption {
         margin-bottom: 15px;
@@ -22,8 +23,8 @@
             min-width: 200px;
             width: 200px;
           }
-          &.table_check_list {
-            width: 50px;
+          &.table_description {
+            width: auto;
           }
         }
       }
@@ -45,9 +46,6 @@
                 text-decoration-thickness: 2px;
               }
             }
-          }
-          &:not(:first-child){
-            text-align: center;
           }
           &:last-child{
             padding-right: 0;

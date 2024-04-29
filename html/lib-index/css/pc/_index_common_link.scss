@@ -1,0 +1,29 @@
+@use "sass:math";
+@use "./settings" as *;
+@use "../mixin" as *;
+
+@include mq($device){
+  .index_common_link {
+    position: relative;
+    padding: 2px 0 0 35px;
+
+    a{
+      margin-bottom: 5px;
+      text-decoration: underline;
+      font-weight: bold;
+      text-decoration-color: #38bdf8;
+      color: #fff;
+      display: inline-block;
+
+      @include hover{
+        text-decoration-thickness: 2px;
+      }
+
+      img{
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+}

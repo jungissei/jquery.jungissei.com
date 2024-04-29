@@ -2,13 +2,6 @@
   {
     "demo_name" : "基本形",
     "demo_slug" : "basic",
-    "check" : {
-      "html_check" : false,
-      "javascript_check" : false,
-      "axedevtools_check" : false,
-      "markuplint_check" : false,
-      "berowser_check" : false,
-      "readme_check" : false
-    }
+    "demo_description" : "モーダルの基本形です。"
   }
 ]

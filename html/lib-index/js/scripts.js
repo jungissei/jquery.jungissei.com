@@ -188,13 +188,8 @@ $(function(){
 
       html += `
         <tr>
-          <td><a href="/modal/${this.demo_slug}/">${this.demo_name}</a></td>
-          <td>${this.check.html_check ? '◯' : '✕'}</td>
-          <td>${this.check.javascript_check ? '◯' : '✕'}</td>
-          <td>${this.check.axedevtools_check ? '◯' : '✕'}</td>
-          <td>${this.check.markuplint_check ? '◯' : '✕'}</td>
-          <td>${this.check.berowser_check ? '◯' : '✕'}</td>
-          <td>${this.check.readme_check ? '◯' : '✕'}</td>
+          <th><a href="/modal/${this.demo_slug}/">${this.demo_name}</a></th>
+          <td><a href="/modal/${this.demo_description}/">${this.demo_description}</a></td>
         </tr>
       `;
     });

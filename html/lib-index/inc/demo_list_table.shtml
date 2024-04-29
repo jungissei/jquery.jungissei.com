@@ -1,35 +1,10 @@
 <colgroup>
   <col class="table_label" span="1"> <!-- ラベル名 -->
-  <col class="table_check_list" span="6"> <!-- チェック項目 -->
+  <col class="table_description" span="1"> <!-- ディスクリプション -->
 </colgroup>
 <thead>
   <tr>
     <th>NAME</th>
-    <th>
-      <a href="https://validator.w3.org/#validate_by_input" target="_blank">
-        <span class="check_list_label">HTML Check</span>
-        <img src="/lib-index/img/html-logo.svg" alt="HTMLのロゴ" width="30" height="30" decoding="async">
-      </a>
-    </th>
-    <th>
-      <span class="check_list_label">JavaScript Check</span>
-      <img src="/lib-index/img/js-logo.svg" alt="JavaScriptのロゴ" width="30" height="30" decoding="async">
-    </th>
-    <th>
-      <span class="check_list_label">axe DevTools Check</span>
-      <img src="/lib-index/img/ax-logo.svg" alt="axeのロゴ" width="30" height="30" decoding="async">
-    </th>
-    <th>
-      <span class="check_list_label">Markuplint Check</span>
-      <img src="/lib-index/img/markuplint-logo.svg" alt="Markuplintのロゴ" width="30" height="30" decoding="async">
-    </th>
-    <th>
-      <span class="check_list_label">Browser Check</span>
-      <img src="/lib-index/img/browser-logo.svg" alt="ブラウザのロゴ" width="30" height="30" decoding="async">
-    </th>
-    <th>
-      <span class="check_list_label">ReadME</span>
-      <img src="/lib-index/img/readme-logo.svg" alt="readmeのロゴ" width="30" height="30" decoding="async">
-    </th>
+    <th>DESCRIPTION</th>
   </tr>
 </thead>

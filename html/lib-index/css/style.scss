@@ -13,6 +13,7 @@
 @use "./pc/index_common_ttl" as *;
 @use "./pc/index_common_txt" as *;
 @use "./pc/index_common_table" as *;
+@use "./pc/index_common_link" as *;
 
 // Parts
 @use "./pc/part_header" as *;
@@ -39,6 +40,7 @@
 @use "./sp/index_common_ttl" as *;
 @use "./sp/index_common_txt" as *;
 @use "./sp/index_common_table" as *;
+@use "./sp/index_common_link" as *;
 
 // Parts
 @use "./sp/part_header" as *;
