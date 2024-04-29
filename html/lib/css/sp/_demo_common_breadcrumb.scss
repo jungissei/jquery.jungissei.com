@@ -1,0 +1,39 @@
+@use "sass:math";
+@use "./setting" as *;
+@use "./../mixin" as *;
+
+@include mq($device){
+
+  #demo_common_breadcrumb{
+    padding: 15px 0;
+  }
+
+  #demo_common_breadcrumb_nav {
+    .breadcrumb_items {
+      .breadcrumb_item {
+        display: inline-block;
+
+        &:not(:first-child){
+          padding-left: 30px;
+          position: relative;
+
+          &::before{
+            content: ">";
+            position: absolute;
+            top: -1px;
+            left: 10px;
+          }
+        }
+
+        a{
+          text-decoration: underline;
+          transition: color 0.2s;
+
+          @include hover{
+            color: rgba(#000, 0.7);
+          }
+        }
+      }
+    }
+  }
+}
