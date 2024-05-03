@@ -81,15 +81,12 @@ $("#modal_demo").on("modal.after_close", function() {
 
 これらのイベントを使用して、モーダルの開閉に応じたカスタムの処理を行うことができます。
 
-## アクセシビリティ
+## テスト
 
-モーダルダイアログには、適切なWAI-ARIA属性を設定して、アクセシビリティを確保しています。
+- [ ] モーダルを開いている時 : 背面スクロール無効。
+- [ ] モーダルオーバーレイクリック時 : モーダル閉じる
+- [ ] モーダルが閉じた時 : モーダルが開くボタンにフォーカス
 
-- `aria-label`: モーダルダイアログの目的を説明するラベルを提供します。
-- `aria-labelledby`: モーダルダイアログのタイトルを参照します。
-- `aria-describedby`: モーダルダイアログの内容を説明する要素を参照します。
-
-また、モーダルを閉じるボタンには、`aria-labelledby`属性を使用して、ボタンの目的を明確にしています。
 
 ## 参考
 [dialog要素を使用したモーダルウィンドウの実装例](https://www.tak-dcxi.com/article/implementation-example-of-a-modal-created-using-the-dialog-element/)
