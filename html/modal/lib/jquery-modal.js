@@ -44,6 +44,11 @@
       closeTriggers.on("click", function(event) {
         this.handleCloseTriggerClick(event, modal);
       }.bind(this));
+
+      // data-modal-dialog-default-open属性を持つ場合、ページ読み込み時にモーダルを開く
+      if ($(modal).is("[data-modal-dialog-default-open]") && !$("[data-modal-dialog-default-open]:visible").length) {
+        this.openModal(modal);
+      }
     },
 
 

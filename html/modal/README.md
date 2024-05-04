@@ -46,6 +46,9 @@ $("#modal_demo").modal();
 
 プラグインの初期化時にオプションを指定できます。
 
+### ページ読み込み時に自動でダイアログを開く
+
+#### JavaScriptから指定
 - `open`: モーダルを自動的に開くかどうかを指定します（デフォルト: `false`）。
 
 ```javascript
@@ -53,6 +56,23 @@ $("#modal_demo").modal({
   open: true
 });
 ```
+
+#### HTMLから指定
+`dialog`タグに`data-modal-dialog-default-open`属性を付与するとページ読み込み時に自動で開きます。
+```html
+<dialog
+  id="modal_demo"
+  class="modal_dialog"
+  aria-label="モーダルデモ"
+  data-modal-dialog
+  data-modal-dialog-default-open
+  aria-labelledby="demo_modal_dialog_ttl"
+  aria-describedby="demo_modal_dialog_desc"
+>
+<!-- 省略 -->
+</dialog>
+```
+
 
 ## イベント
 

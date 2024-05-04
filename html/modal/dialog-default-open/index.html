@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <!--#include virtual="/lib/inc/head_begin.shtml" -->
+    <meta charset="UTF-8">
+    <title>デフォルトでダイアログが開く | Modal | jQuery UI LIST / Jung Issei</title>
+    <!--#include virtual="/lib/inc/head_close.shtml" -->
+    <!--#include virtual="/modal/lib/head_close.shtml" -->
+    <link rel="stylesheet" href="./style.css?v=0">
+  </head>
+  <body class="pc_solid">
+    <!--#include virtual="/lib/inc/body_begin.shtml" -->
+
+    <div id="wrapper">
+
+      <header>
+
+      </header>
+
+      <main>
+
+        <!--#include virtual="/lib/inc/breadcrumb.shtml" -->
+
+        <div id="demo_layout" class="page_layout layout1">
+          <div class="layout_inner">
+            <div class="layout_container">
+              <div class="layout_width">
+
+                <h1 class="demo_common_ttl1">Modal（デフォルトでダイアログが開く）</h1>
+
+
+                <!-- モーダル 開くボタン ここから -->
+                <button
+                  type="button"
+                  class="demo_btn"
+                  data-modal-open="modal_demo"
+                >
+                  モーダルデモを開く
+                </button>
+                <!-- モーダル 開くボタン ここまで -->
+                <!-- モーダル ダイアログ ここから -->
+                <dialog
+                  id="modal_demo"
+                  class="modal_dialog"
+                  aria-label="モーダルデモ"
+                  data-modal-dialog
+                  data-modal-dialog-default-open
+                  aria-labelledby="demo_modal_dialog_ttl"
+                  aria-describedby="demo_modal_dialog_desc"
+                >
+
+                  <div class="dialog_content">
+                    <h2 id="demo_modal_dialog_ttl" class="demo_common_ttl1">モーダルデモのタイトル</h2>
+                    <div id="demo_modal_dialog_desc" class="demo_common_txt1">
+                      <p>モーダルデモのテキストです。モーダルデモのテキストです。モーダルデモのテキストです。モーダルデモのテキストです。モーダルデモのテキストです。</p>
+                      <p>モーダルデモのテキストです。モーダルデモのテキストです。モーダルデモのテキストです。モーダルデモのテキストです。モーダルデモのテキストです。</p>
+                      <p>モーダルデモのテキストです。モーダルデモのテキストです。モーダルデモのテキストです。モーダルデモのテキストです。モーダルデモのテキストです。</p>
+                    </div>
+
+                    <button
+                      class="dialog_close"
+                      type="button"
+                      aria-labelledby="modal_demo_close"
+                      data-modal-close
+                    >
+                      <span id="modal_demo_close" style="display:none">モーダルを閉じる</span>
+                    </button>
+                  </div>
+
+                </dialog>
+                <!-- モーダル ダイアログ ここまで -->
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </main>
+      <footer>
+
+      </footer>
+
+    </div>
+
+    <!--#include virtual="/lib/inc/body_close.shtml" -->
+    <!--#include virtual="/modal/lib/body_close.shtml" -->
+
+  </body>
+</html>
