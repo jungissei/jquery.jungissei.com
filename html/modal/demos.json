@@ -3,5 +3,9 @@
     "demo_name" : "基本形式",
     "demo_slug" : "basic",
     "demo_description" : "モーダルの基本形式です。"
+  },{
+    "demo_name" : "デフォルトでダイアログが開く",
+    "demo_slug" : "dialog-default-open",
+    "demo_description" : "ページ読み込み時からモーダルダイアログが開くようになっています。"
   }
 ]
