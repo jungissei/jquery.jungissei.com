@@ -1,0 +1,60 @@
+@use "sass:math";
+@use "../../lib/css/pc/setting" as *;
+@use "../../lib/css/mixin" as *;
+
+@include mq($device){
+  .list_items{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    .list_item{
+      width: calc((100% - 60px) / 3);
+      position: relative;
+      transition: opacity 0.3s;
+
+      .item_img{
+        overflow: hidden;
+
+        img{
+          transition: transform 0.3s;
+        }
+      }
+
+      .item_name{
+        text-align: center;
+        display: block;
+        width: 100%;
+        margin-top: 5px;
+
+        &::after{
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      @include hover{
+        opacity: 0.8;
+
+        .item_img{
+          img{
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+  }
+
+
+  .demo_common_ttl{
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+}
