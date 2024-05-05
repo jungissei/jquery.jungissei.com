@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <!--#include virtual="/lib/inc/head_begin.shtml" -->
+    <meta charset="UTF-8">
+    <title>一覧形式 | Modal | jQuery UI LIST / Jung Issei</title>
+    <!--#include virtual="/lib/inc/head_close.shtml" -->
+    <!--#include virtual="/modal/lib/head_close.shtml" -->
+    <link rel="stylesheet" href="./style.css?v=0">
+  </head>
+  <body class="pc_solid">
+    <!--#include virtual="/lib/inc/body_begin.shtml" -->
+
+    <div id="wrapper">
+
+      <header>
+
+      </header>
+
+      <main>
+
+        <!--#include virtual="/lib/inc/breadcrumb.shtml" -->
+
+        <div id="demo_layout" class="page_layout layout1">
+          <div class="layout_inner">
+            <div class="layout_container">
+              <div class="layout_width">
+
+                <h1 class="demo_common_ttl1">Modal（一覧形式）</h1>
+
+                <div class="list_items">
+
+
+                  <!-- 犬　単体 ここから -->
+                  <div class="list_item">
+                    <div class="item_img"><img src="/lib/img/dog1.jpg" alt="" width="646" height="426"></div>
+                    <!-- モーダル 開くボタン ここから -->
+                    <button class="item_name" data-modal-open="modal_demo1">ルーク</button>
+                    <!-- モーダル 開くボタン ここまで -->
+                    <!-- モーダル ダイアログ ここから -->
+                    <dialog id="modal_demo1" class="modal_dialog" aria-label="モーダルデモ" data-modal-dialog
+                      aria-labelledby="demo_modal_dialog_ttl1" aria-describedby="demo_modal_dialog_desc1">
+                      <div class="dialog_content">
+                        <div class="demo_common_img"><img src="/lib/img/dog1.jpg" alt="" width="646" height="426"></div>
+                        <h2 id="demo_modal_dialog_ttl1" class="demo_common_ttl">ルーク</h2>
+                        <div id="demo_modal_dialog_desc1" class="demo_common_txt">
+                          <p>ゴールデンレトリバーのルークは、明るく社交的な性格の3歳の男の子です。人懐っこく、他の犬とも仲良くなれるのが特徴。お散歩が大好きで、ボール遊びになるとはしゃいで飛び回ります。</p>
+                          <p>家ではいつもリラックスモードで、飼い主の隣でゴロゴロするのが日課。おやつをねだる顔も可愛らしく、どこへ行く時も一緒について行きたがるほど飼い主に従順です。</p>
+                          <p>大きな体と豊かな毛並み、そしてキラキラ輝く優しい瞳を持つルークは、愛情深い飼い主に見守られながら、毎日を元気いっぱいに過ごしています。</p>
+                        </div>
+                        <button class="dialog_close" type="button" aria-labelledby="modal_demo_close1" data-modal-close>
+                          <span id="modal_demo_close1" style="display:none">モーダルを閉じる</span>
+                        </button>
+                      </div>
+                    </dialog>
+                    <!-- モーダル ダイアログ ここまで -->
+                  </div>
+                  <!-- 犬　単体 ここまで -->
+                  <!-- 犬　単体 ここから -->
+                  <div class="list_item">
+                    <div class="item_img"><img src="/lib/img/dog2.jpg" alt="" width="646" height="426"></div>
+                    <!-- モーダル 開くボタン ここから -->
+                    <button class="item_name" data-modal-open="modal_demo2">ベル</button>
+                    <!-- モーダル 開くボタン ここまで -->
+                    <!-- モーダル ダイアログ ここから -->
+                    <dialog id="modal_demo2" class="modal_dialog" aria-label="モーダルデモ" data-modal-dialog
+                      aria-labelledby="demo_modal_dialog_ttl2" aria-describedby="demo_modal_dialog_desc2">
+                      <div class="dialog_content">
+                        <div class="demo_common_img"><img src="/lib/img/dog2.jpg" alt="" width="646" height="426"></div>
+                        <h2 id="demo_modal_dialog_ttl2" class="demo_common_ttl">ベル</h2>
+                        <div id="demo_modal_dialog_desc2" class="demo_common_txt">
+                          <p>シェットランドシープドッグのベルは、4歳の女の子。小柄な体にふさふさの毛が特徴的で、頭の上の毛をリボンで結んでいるのがチャームポイントです。</p>
+                          <p>とてもおしゃべりな性格で、散歩中も家の中でもよく吠えています。飼い主のことが大好きで、いつも後をついて歩くのが日課。初対面の人にも吠えてしまうこともありますが、慣れるとすぐに懐きます。</p>
+                          <p>好奇心旺盛で活発な性格のベルは、公園でのんびり過ごすのが一番の楽しみ。小さな体で一生懸命駆け回る姿は、見ている人を癒やしてくれます。飼い主と一緒に穏やかな日々を送っています。</p>
+                        </div>
+                        <button class="dialog_close" type="button" aria-labelledby="modal_demo_close2" data-modal-close>
+                          <span id="modal_demo_close2" style="display:none">モーダルを閉じる</span>
+                        </button>
+                      </div>
+                    </dialog>
+                    <!-- モーダル ダイアログ ここまで -->
+                  </div>
+                  <!-- 犬　単体 ここまで -->
+                  <!-- 犬　単体 ここから -->
+                  <div class="list_item">
+                    <div class="item_img"><img src="/lib/img/dog3.jpg" alt="" width="646" height="426"></div>
+                    <!-- モーダル 開くボタン ここから -->
+                    <button class="item_name" data-modal-open="modal_demo3">マックス</button>
+                    <!-- モーダル 開くボタン ここまで -->
+                    <!-- モーダル ダイアログ ここから -->
+                    <dialog id="modal_demo3" class="modal_dialog" aria-label="モーダルデモ" data-modal-dialog
+                      aria-labelledby="demo_modal_dialog_ttl3" aria-describedby="demo_modal_dialog_desc3">
+                      <div class="dialog_content">
+                        <div class="demo_common_img"><img src="/lib/img/dog3.jpg" alt="" width="646" height="426"></div>
+                        <h2 id="demo_modal_dialog_ttl3" class="demo_common_ttl">マックス</h2>
+                        <div id="demo_modal_dialog_desc3" class="demo_common_txt">
+                          <p>ジャーマンシェパードのマックスは5歳のオス犬。大きくたくましい体つきで、凛々しい顔つきをしています。警戒心が強く、他の犬や知らない人に吠えることもありますが、飼い主にはとても従順。</p>
+                          <p>頭が良く芸を覚えるのが得意で、お手やお座りはもちろん、物を取ってきたりすることもできます。毎日2時間の散歩が日課で、飼い主の隣をしっかりと歩く姿は頼もしい限り。</p>
+                          <p>パワフルで忠実なマックス。強面ながらも家族思いの優しい一面を持ち、飼い主家族をしっかりと守ってくれる頼れる存在です。時折見せる無邪気な表情に、飼い主は日々癒されています。</p>
+                        </div>
+                        <button class="dialog_close" type="button" aria-labelledby="modal_demo_close3" data-modal-close>
+                          <span id="modal_demo_close3" style="display:none">モーダルを閉じる</span>
+                        </button>
+                      </div>
+                    </dialog>
+                    <!-- モーダル ダイアログ ここまで -->
+                  </div>
+                  <!-- 犬　単体 ここまで -->
+                  <!-- 犬　単体 ここから -->
+                  <div class="list_item">
+                    <div class="item_img"><img src="/lib/img/dog4.jpg" alt="" width="646" height="426"></div>
+                    <!-- モーダル 開くボタン ここから -->
+                    <button class="item_name" data-modal-open="modal_demo4">ルーシー</button>
+                    <!-- モーダル 開くボタン ここまで -->
+                    <!-- モーダル ダイアログ ここから -->
+                    <dialog id="modal_demo4" class="modal_dialog" aria-label="モーダルデモ" data-modal-dialog
+                      aria-labelledby="demo_modal_dialog_ttl4" aria-describedby="demo_modal_dialog_desc4">
+                      <div class="dialog_content">
+                        <div class="demo_common_img"><img src="/lib/img/dog4.jpg" alt="" width="646" height="426"></div>
+                        <h2 id="demo_modal_dialog_ttl4" class="demo_common_ttl">ルーシー</h2>
+                        <div id="demo_modal_dialog_desc4" class="demo_common_txt">
+                          <p>ビーグルの女の子、ルーシーは活発で好奇心旺盛な2歳です。三角の耳としっかりとした胴体、大きな瞳が印象的。鼻の良さは抜群で、においを嗅ぎ分ける姿はまるで探偵のよう。</p>
+                          <p>いつも元気いっぱいで遊ぶことが大好き。飼い主の後をついて回り、ボールを咥えて持ってくる姿は愛らしいです。他の犬や人にもフレンドリーに接することができ、ドッグランではおしゃべりな一面も。</p>
+                          <p>好奇心の赴くままに庭を駆け回るルーシー。疲れ果てて眠る姿は天使のよう。抱きしめたくなるほどの可愛らしさで、飼い主は今日もルーシーに癒されています。</p>
+                        </div>
+                        <button class="dialog_close" type="button" aria-labelledby="modal_demo_close4" data-modal-close>
+                          <span id="modal_demo_close4" style="display:none">モーダルを閉じる</span>
+                        </button>
+                      </div>
+                    </dialog>
+                    <!-- モーダル ダイアログ ここまで -->
+                  </div>
+                  <!-- 犬　単体 ここまで -->
+                  <!-- 犬　単体 ここから -->
+                  <div class="list_item">
+                    <div class="item_img"><img src="/lib/img/dog5.jpg" alt="" width="646" height="426"></div>
+                    <!-- モーダル 開くボタン ここから -->
+                    <button class="item_name" data-modal-open="modal_demo5">チャーリー</button>
+                    <!-- モーダル 開くボタン ここまで -->
+                    <!-- モーダル ダイアログ ここから -->
+                    <dialog id="modal_demo5" class="modal_dialog" aria-label="モーダルデモ" data-modal-dialog
+                      aria-labelledby="demo_modal_dialog_ttl5" aria-describedby="demo_modal_dialog_desc5">
+                      <div class="dialog_content">
+                        <div class="demo_common_img"><img src="/lib/img/dog5.jpg" alt="" width="646" height="426"></div>
+                        <h2 id="demo_modal_dialog_ttl5" class="demo_common_ttl">チャーリー</h2>
+                        <div id="demo_modal_dialog_desc5" class="demo_common_txt">
+                          <p>ブルドッグのチャーリーは6歳の男の子。がっしりとした体格とたるんだ皮膚、そしてちょっと不機嫌そうな表情が特徴的。見た目は怖そうですが、実は人懐っこい性格の持ち主です。</p>
+                          <p>お散歩は苦手で、ゆったりマイペースに歩きます。暑さにも弱いので、夏場は早朝か夕方の涼しい時間にしか外出しません。でも、家の中では意外と活発で、おもちゃで遊ぶ姿はまるで子犬のよう。</p>
+                          <p>食いしん坊で、特におやつには目がありません。太り気味なので飼い主は食事の量に気をつけていますが、おねだりの表情を見せられると、ついつい甘やかしてしまうのだとか。愛嬌たっぷりなチャーリーに、飼い主は毎日メロメロです。
+                          </p>
+                        </div>
+                        <button class="dialog_close" type="button" aria-labelledby="modal_demo_close5" data-modal-close>
+                          <span id="modal_demo_close5" style="display:none">モーダルを閉じる</span>
+                        </button>
+                      </div>
+                    </dialog>
+                    <!-- モーダル ダイアログ ここまで -->
+                  </div>
+                  <!-- 犬　単体 ここまで -->
+                  <!-- 犬　単体 ここから -->
+                  <div class="list_item">
+                    <div class="item_img"><img src="/lib/img/dog6.jpg" alt="" width="646" height="426"></div>
+                    <!-- モーダル 開くボタン ここから -->
+                    <button class="item_name" data-modal-open="modal_demo6">デイジー</button>
+                    <!-- モーダル 開くボタン ここまで -->
+                    <!-- モーダル ダイアログ ここから -->
+                    <dialog id="modal_demo6" class="modal_dialog" aria-label="モーダルデモ" data-modal-dialog
+                      aria-labelledby="demo_modal_dialog_ttl6" aria-describedby="demo_modal_dialog_desc6">
+                      <div class="dialog_content">
+                        <div class="demo_common_img"><img src="/lib/img/dog6.jpg" alt="" width="646" height="426"></div>
+                        <h2 id="demo_modal_dialog_ttl6" class="demo_common_ttl">デイジー</h2>
+                        <div id="demo_modal_dialog_desc6" class="demo_common_txt">
+                          <p>ボーダーコリーのデイジーは、1歳の女の子。黒と白のツートンカラーの被毛が美しく、三角形の耳と細身の体つきが特徴的。知的な印象を与える顔つきをしています。</p>
+                          <p>デイジーは飼い主の言うことをよく聞き、芸をするのが得意。たくさんの指示を理解することができ、アジリティなどのドッグスポーツでも活躍中。持ち前の頭の良さを生かして、訓練にも熱心に取り組んでいます。</p>
+                          <p>いつも笑顔を絶やさず、周りを明るくしてくれるデイジー。飼い主だけでなく、会う人すべてを虜にしてしまうほどの魅力があります。小さな体に秘めた大きなパワーで、飼い主の生活に彩りを与えています。</p>
+                        </div>
+                        <button class="dialog_close" type="button" aria-labelledby="modal_demo_close6" data-modal-close>
+                          <span id="modal_demo_close6" style="display:none">モーダルを閉じる</span>
+                        </button>
+                      </div>
+                    </dialog>
+                    <!-- モーダル ダイアログ ここまで -->
+                  </div>
+                  <!-- 犬　単体 ここまで -->
+
+
+
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </main>
+      <footer>
+
+      </footer>
+
+    </div>
+
+    <!--#include virtual="/lib/inc/body_close.shtml" -->
+    <!--#include virtual="/modal/lib/body_close.shtml" -->
+
+  </body>
+</html>

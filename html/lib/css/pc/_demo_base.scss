@@ -1,0 +1,12 @@
+@use "sass:math";
+@use "./setting" as *;
+@use "./../mixin" as *;
+
+@include mq($device){
+
+  img{
+    width: auto;
+    max-width: 100%;
+    height: auto;
+  }
+}

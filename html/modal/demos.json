@@ -7,5 +7,9 @@
     "demo_name" : "デフォルトでダイアログが開く",
     "demo_slug" : "dialog-default-open",
     "demo_description" : "ページ読み込み時からモーダルダイアログが開くようになっています。"
+  },{
+    "demo_name" : "一覧形式",
+    "demo_slug" : "list",
+    "demo_description" : "一覧形式のモーダルです。"
   }
 ]
