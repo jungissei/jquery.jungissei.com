@@ -2,5 +2,8 @@
   {
     "category_name" : "Modal",
     "category_slug" : "modal"
+  },{
+    "category_name" : "Hamburger Menu",
+    "category_slug" : "hamburger-menu"
   }
 ]
