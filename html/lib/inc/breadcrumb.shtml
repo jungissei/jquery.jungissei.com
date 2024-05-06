@@ -7,7 +7,7 @@
           <ol class="breadcrumb_items">
             <li class="breadcrumb_item"><a class="item_inner" href="/">HOME</a></li>
             <li class="breadcrumb_item"><a class="item_inner" href="../" data-demo-ui></a></li>
-            <li class="breadcrumb_item"><span class="item_inner">基本形式</span></li>
+            <li class="breadcrumb_item"><span class="item_inner" data-demo-name></span></li>
           </ol>
         </nav>
 

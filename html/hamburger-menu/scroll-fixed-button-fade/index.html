@@ -3,9 +3,9 @@
   <head>
     <!--#include virtual="/lib/inc/head_begin.shtml" -->
     <meta charset="UTF-8">
-    <title>基本形式 | Modal | jQuery UI LIST / Jung Issei</title>
+    <title>【開くボタン固定】フェード形式 | hamburger-menu | jQuery UI LIST / Jung Issei</title>
     <!--#include virtual="/lib/inc/head_close.shtml" -->
-    <!--#include virtual="/modal/lib/head_close.shtml" -->
+    <!--#include virtual="/hamburger-menu/lib/head_close.shtml" -->
     <link rel="stylesheet" href="./style.css?v=0">
   </head>
   <body class="pc_solid">
@@ -14,6 +14,18 @@
     <div id="wrapper">
 
       <header>
+
+        <!-- BEGIN ハンバーガーメニューを開くボタン -->
+        <button
+          type="button"
+          class="hamburger_menu_btn is_fixed"
+          data-modal-open="hamburger_menu"
+        >
+          <span style="display:none">メニューを開く</span>
+          <span class="btn_line"></span>
+        </button>
+        <!-- END ハンバーガーメニューを開くボタン -->
+
 
       </header>
 
@@ -26,53 +38,14 @@
             <div class="layout_container">
               <div class="layout_width">
 
-                <h1 class="demo_common_ttl1">Modal（基本形式）</h1>
-
-
-                <!-- モーダル 開くボタン ここから -->
-                <button
-                  type="button"
-                  class="demo_btn"
-                  data-modal-open="modal_demo"
-                >
-                  モーダルデモを開く
-                </button>
-                <!-- モーダル 開くボタン ここまで -->
-                <!-- モーダル ダイアログ ここから -->
-                <dialog
-                  id="modal_demo"
-                  class="modal_dialog"
-                  aria-label="モーダルデモ"
-                  data-modal-dialog
-                  aria-labelledby="demo_modal_dialog_ttl"
-                  aria-describedby="demo_modal_dialog_desc"
-                >
-
-                  <div class="dialog_content">
-                    <h2 id="demo_modal_dialog_ttl" class="demo_common_ttl1">モーダルデモのタイトル</h2>
-                    <div id="demo_modal_dialog_desc" class="demo_common_txt1">
-                      <p>モーダルデモのテキストです。モーダルデモのテキストです。モーダルデモのテキストです。モーダルデモのテキストです。モーダルデモのテキストです。</p>
-                      <p>モーダルデモのテキストです。モーダルデモのテキストです。モーダルデモのテキストです。モーダルデモのテキストです。モーダルデモのテキストです。</p>
-                      <p>モーダルデモのテキストです。モーダルデモのテキストです。モーダルデモのテキストです。モーダルデモのテキストです。モーダルデモのテキストです。</p>
-                    </div>
-
-                    <button
-                      class="dialog_close"
-                      type="button"
-                      aria-labelledby="modal_demo_close"
-                      data-modal-close
-                    >
-                      <span id="modal_demo_close" style="display:none">モーダルを閉じる</span>
-                    </button>
-                  </div>
-
-                </dialog>
-                <!-- モーダル ダイアログ ここまで -->
+                <!--#include virtual="/lib/inc/demo_name.shtml" -->
 
               </div>
             </div>
           </div>
         </div>
+
+        <!--#include virtual="/lib/inc/demo_content1.shtml" -->
 
       </main>
       <footer>
@@ -82,7 +55,7 @@
     </div>
 
     <!--#include virtual="/lib/inc/body_close.shtml" -->
-    <!--#include virtual="/modal/lib/body_close.shtml" -->
+    <!--#include virtual="/hamburger-menu/lib/body_close.shtml" -->
 
   </body>
 </html>

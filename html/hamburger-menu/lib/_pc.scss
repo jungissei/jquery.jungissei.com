@@ -5,109 +5,70 @@
 @include mq($device){
 
   // ----------------------------------------------------------------------------
-  // Modal
-  // マウスやタップ操作時のoutlineの出現を抑制
-  // Modal Dialog
-  // Modal Backdrop（オーバーレイ）
-  // Modal Close Button
+  // ハンバーガーメニュー
+  // ハンバーガーメニューを開くボタン
   // ----------------------------------------------------------------------------
 
   // --------------------------------------
-  // マウスやタップ操作時のoutlineの出現を抑制
+  // ハンバーガーメニューを開くボタン
   // --------------------------------------
-  :focus:not(:focus-visible),
-  :where(:root[data-mousedown] dialog *),
-  [data-modal-open]:where(:root[data-mousedown] *) {
-    outline: none;
-  }
+  // Button size related
+  $btn_with: 50px;
+  $btn_height: 50px;
 
-  // --------------------------------------
-  // Modal Dialog
-  // --------------------------------------
-  .modal_dialog {
-    padding: 0;
-    max-width: 600px;
-    width: 100%;
-    max-height: calc(100vh - 60px);
-    opacity: 0;
-    transition: opacity 0.3s ease;
+  // Button line related
+  $btn_line_width: 60%;
+  $btn_line_height: 1px;
 
-    // Safariの時
-    @include only_safari{
-      max-height: calc(100svh - 60px);
+  // Button color related
+  $btn_color: #716e77;
+  $btn_line_color: #ffffff;
+
+  .hamburger_menu_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: $btn_color;
+    width: $btn_with;
+    padding: math.div($btn_height, 2) 0;
+    cursor: pointer;
+    overflow: hidden;
+
+
+    &.is_fixed{
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 4;
     }
 
-    // モーダルが開いた時
-    &[data-modal-active="true"]{
-      opacity: 1;
-    }
-
-    // --------------------------------------
-    // Modal Backdrop（オーバーレイ）
-    // --------------------------------------
-    &::backdrop {
-      backdrop-filter: blur(4px);
-      background-color: rgba(#000, 0.7);
-      cursor: pointer;
-    }
-
-
-    // --------------------------------------
-    // Modal Content
-    // --------------------------------------
-    .dialog_content{
-      padding: 50px 30px;
-      background-color: #ccc;
-    }
-
-    // --------------------------------------
-    // Modal Close Button
-    // --------------------------------------
-    .dialog_close {
-      // Button size related
-      $btn_with: 50px;
-      $btn_height: 50px;
-
-      // Button line related
-      $btn_line_width: 60%;
-      $btn_line_height: 2px;
-
-      // Button color related
-      $btn_color: transparent;
-      $btn_line_color: #716e77;
+    .btn_line{
       display: block;
-      position: absolute;
-      top: 0;
-      right: 0;
-      overflow: hidden;
-      background-color: $btn_color;
-      width: $btn_with;
-      padding: math.div($btn_height, 2) 0;
-      cursor: pointer;
-
+      background-color: $btn_line_color;
+      width: $btn_line_width;
+      height: $btn_line_height;
 
       &::before,
       &::after{
-        content: "";
+        content: '';
         display: block;
-        position: absolute;
-        right: 0;
-        left: 0;
-        margin-right: auto;
-        margin-left: auto;
         background-color: $btn_line_color;
         width: $btn_line_width;
         height: $btn_line_height;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin-right: auto;
+        margin-left: auto;
       }
 
-      &::before {
-        top: calc(50% - (#{$btn_line_height} / 2));
-        transform: rotate(45deg);
+      &::before{
+        top: 30%;
       }
 
-      &::after {
-        bottom: calc(50% - (#{$btn_line_height} / 2));
-        transform: rotate(-45deg);
+      &::after{
+        bottom: 30%;
       }
     }
   }
