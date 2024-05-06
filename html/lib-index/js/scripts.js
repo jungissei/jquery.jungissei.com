@@ -188,7 +188,7 @@ $(function(){
 
       html += `
         <tr>
-          <th><a href="/modal/${this.demo_slug}/">${this.demo_name}</a></th>
+          <th><a href="./${this.demo_slug}/">${this.demo_name}</a></th>
           <td>${this.demo_description}</td>
         </tr>
       `;
