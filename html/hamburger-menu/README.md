@@ -103,3 +103,8 @@ $('a:not([data-smooth-scroll="false"])').smoothScroll({
 });
 
 ```
+
+
+## テスト
+
+- [ ] ページ内リンクをクリックしたときにモーダルダイアログが閉じるか
