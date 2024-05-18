@@ -394,9 +394,30 @@
 
   /**
    * jQueryプラグインとしてモーダル機能を初期化します。
-   * @param {Object} options - モーダルの設定オプション。openプロパティがtrueの場合、モーダルを自動的に開きます。
+   * @param {Object|string} options - モーダルの設定オプションまたはアクション文字列。
+   *                                  openプロパティがtrueの場合、モーダルを自動的に開きます。
+   *                                  'close'を指定した場合、モーダルを閉じます。
    */
   $.fn.modal = function (options) {
+
+    // オプションが文字列の場合はアクションとして処理
+    if (typeof options === 'string') {
+      const action = options;
+
+      // 各要素に対して処理を行います。
+      return this.each(function () {
+        // 現在の要素からモーダルデータを取得します。
+        let modal = $(this).data("modal");
+
+        // モーダルデータが存在する場合にのみアクションを実行
+        if (modal) {
+          if (action === 'close') {
+            modal.close(); // モーダルを閉じる
+          }
+        }
+      });
+    }
+
     // デフォルトオプションを設定
     options = $.extend({
       open: false, // デフォルトではモーダルを自動的に開かない

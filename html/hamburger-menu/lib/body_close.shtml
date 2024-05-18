@@ -1,3 +1,5 @@
 <!-- モーダル ここから -->
 <script src="/modal/lib/jquery-modal.js"></script>
 <!-- モーダル ここまで -->
+
+<script src="/jquery.smooth-scroll/lib/jquery.smooth-scroll.js"></script>
