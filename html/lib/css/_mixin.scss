@@ -23,10 +23,20 @@ $breakpoint: (
 // ----------------------------------------------------------------------------
 // hover
 // ----------------------------------------------------------------------------
-@mixin hover {
+// hover mixin
+@mixin hover($include_selectors: ()) {
+
   @media (hover: hover) and (pointer: fine)  {
     &:hover {
       @content;
+    }
+
+    @if($include_selectors != ()){
+      @each $selector in $include_selectors {
+        &#{$selector} {
+          @content;
+        }
+      }
     }
   }
 }

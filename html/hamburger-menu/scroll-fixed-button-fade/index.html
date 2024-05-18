@@ -15,17 +15,50 @@
 
       <header>
 
-        <!-- BEGIN ハンバーガーメニューを開くボタン -->
-        <button
-          type="button"
-          class="hamburger_menu_btn is_fixed"
-          data-modal-open="hamburger_menu"
-        >
-          <span style="display:none">メニューを開く</span>
-          <span class="btn_line"></span>
-        </button>
-        <!-- END ハンバーガーメニューを開くボタン -->
+        <nav id="site_menu" aria-labelledby="site_menu_label">
+          <p id="site_menu_label" style="display: none;">サイトメニュー</p>
+          <!-- BEGIN ハンバーガーメニューを開くボタン -->
+          <button
+            type="button"
+            class="hamburger_menu_btn is_fixed"
+            data-modal-open="hamburger_menu"
+          >
+            <span style="display:none">メニューを開く</span>
+            <span class="btn_line"></span>
+          </button>
+          <!-- END ハンバーガーメニューを開くボタン -->
+          <!-- モーダル ダイアログ ここから -->
+          <dialog
+            id="hamburger_menu"
+            class="hamburger_menu_dialog"
+            data-modal-dialog
+            aria-labelledby="hamburger_menu_dialog_ttl"
+          >
 
+            <div class="dialog_content">
+              <p id="hamburger_menu_dialog_ttl" style="display: none;">折りたたみメニュー</p>
+
+              <ul role="list">
+                <li><a href="">リンク1</a></li>
+                <li><a href="">リンク2</a></li>
+                <li><a href="">リンク3</a></li>
+                <li><a href="">リンク4</a></li>
+                <li><a href="">リンク5</a></li>
+              </ul>
+
+              <button
+                class="dialog_close"
+                type="button"
+                aria-labelledby="hamburger_menu_dialog_close"
+                data-modal-close
+              >
+                <span id="hamburger_menu_dialog_close" style="display:none">メニューを閉じる</span>
+              </button>
+            </div>
+
+          </dialog>
+          <!-- モーダル ダイアログ ここまで -->
+        </nav>
 
       </header>
 
@@ -55,7 +88,9 @@
     </div>
 
     <!--#include virtual="/lib/inc/body_close.shtml" -->
-    <!--#include virtual="/hamburger-menu/lib/body_close.shtml" -->
+    <!--#include virtual="/modal/lib/body_close.shtml" -->
+
+    <script src="./scripts.js"></script>
 
   </body>
 </html>
