@@ -1,0 +1,68 @@
+<section id="demo_content1_ruke" class="page_layout layout1 block_content1_layout">
+  <div class="layout_inner">
+    <div class="layout_container">
+      <div class="layout_width">
+
+        <h2 class="demo_common_ttl2">ルーク</h2>
+
+        <div class="block_content1">
+          <div class="block_col"><img src="/lib/img/dog1.jpg" alt=""></div>
+          <div class="block_col">
+            <div class="txt">
+              <p>ゴールデンレトリバーのルークは、明るく社交的な性格の3歳の男の子です。人懐っこく、他の犬とも仲良くなれるのが特徴。お散歩が大好きで、ボール遊びになるとはしゃいで飛び回ります。</p>
+              <p>家ではいつもリラックスモードで、飼い主の隣でゴロゴロするのが日課。おやつをねだる顔も可愛らしく、どこへ行く時も一緒について行きたがるほど飼い主に従順です。</p>
+              <p>大きな体と豊かな毛並み、そしてキラキラ輝く優しい瞳を持つルークは、愛情深い飼い主に見守られながら、毎日を元気いっぱいに過ごしています。</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<section id="demo_content1_bell" class="page_layout layout1 block_content1_layout">
+  <div class="layout_inner">
+    <div class="layout_container">
+      <div class="layout_width">
+
+
+        <h2 class="demo_common_ttl2">ベル</h2>
+
+        <div class="block_content1 block_revers">
+          <div class="block_col"><img src="/lib/img/dog2.jpg" alt=""></div>
+          <div class="block_col">
+            <div class="txt">
+              <p>シェットランドシープドッグのベルは、4歳の女の子。小柄な体にふさふさの毛が特徴的で、頭の上の毛をリボンで結んでいるのがチャームポイントです。</p>
+              <p>とてもおしゃべりな性格で、散歩中も家の中でもよく吠えています。飼い主のことが大好きで、いつも後をついて歩くのが日課。初対面の人にも吠えてしまうこともありますが、慣れるとすぐに懐きます。</p>
+              <p>好奇心旺盛で活発な性格のベルは、公園でのんびり過ごすのが一番の楽しみ。小さな体で一生懸命駆け回る姿は、見ている人を癒やしてくれます。飼い主と一緒に穏やかな日々を送っています。</p>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</section>
+<section id="demo_content1_max" class="page_layout layout1 block_content1_layout">
+  <div class="layout_inner">
+    <div class="layout_container">
+      <div class="layout_width">
+
+        <h2 class="demo_common_ttl2">マックス</h2>
+
+        <div class="block_content1">
+          <div class="block_col"><img src="/lib/img/dog3.jpg" alt=""></div>
+          <div class="block_col">
+            <div class="txt">
+              <p>ジャーマンシェパードのマックスは5歳のオス犬。大きくたくましい体つきで、凛々しい顔つきをしています。警戒心が強く、他の犬や知らない人に吠えることもありますが、飼い主にはとても従順。</p>
+              <p>頭が良く芸を覚えるのが得意で、お手やお座りはもちろん、物を取ってきたりすることもできます。毎日2時間の散歩が日課で、飼い主の隣をしっかりと歩く姿は頼もしい限り。</p>
+              <p>パワフルで忠実なマックス。強面ながらも家族思いの優しい一面を持ち、飼い主家族をしっかりと守ってくれる頼れる存在です。時折見せる無邪気な表情に、飼い主は日々癒されています。</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

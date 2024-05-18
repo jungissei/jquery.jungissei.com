@@ -1,0 +1,62 @@
+[
+  {
+    "demo_name": "【開くボタン固定】フェード形式",
+    "demo_slug": "scroll-fixed-button-fade",
+    "demo_description": "スクロール追従する開くボタンを設置し、フェード形式でモーダルを開閉します。"
+  },
+  {
+    "demo_name": "【開くボタン固定】スライドイン（左から）",
+    "demo_slug": "scroll-fixed-button-slide-in-from-left",
+    "demo_description": "スクロール追従する開くボタンを設置し、左からスライドイン形式でモーダルを開閉します。"
+  },
+  {
+    "demo_name": "【開くボタン固定】スライドイン（右から）",
+    "demo_slug": "scroll-fixed-button-slide-in-from-right",
+    "demo_description": "スクロール追従する開くボタンを設置し、右からスライドイン形式でモーダルを開閉します。"
+  },
+  {
+    "demo_name": "【開くボタン固定】スライドイン（上から）",
+    "demo_slug": "scroll-fixed-button-slide-in-from-top",
+    "demo_description": "スクロール追従する開くボタンを設置し、上からスライドイン形式でモーダルを開閉します。"
+  },
+  {
+    "demo_name": "【ヘッダー固定】フェード形式",
+    "demo_slug": "scroll-fixed-header-fade",
+    "demo_description": "固定ヘッダー内に開くボタンを設置し、フェード形式でモーダルを開閉します。"
+  },
+  {
+    "demo_name": "【ヘッダー固定】スライドイン（左から）",
+    "demo_slug": "scroll-fixed-header-slide-in-from-left",
+    "demo_description": "固定ヘッダー内に開くボタンを設置し、左からスライドイン形式でモーダルを開閉します。"
+  },
+  {
+    "demo_name": "【ヘッダー固定】スライドイン（右から）",
+    "demo_slug": "scroll-fixed-header-slide-in-from-right",
+    "demo_description": "固定ヘッダー内に開くボタンを設置し、右からスライドイン形式でモーダルを開閉します。"
+  },
+  {
+    "demo_name": "【ヘッダー固定】スライドイン（上から）",
+    "demo_slug": "scroll-fixed-header-slide-in-from-top",
+    "demo_description": "固定ヘッダー内に開くボタンを設置し、上からスライドイン形式でモーダルを開閉します。"
+  },
+  {
+    "demo_name": "【開くボタン静的設置】フェード形式",
+    "demo_slug": "static-button-fade",
+    "demo_description": "静的に設置した開くボタンから、フェード形式でモーダルを開閉します。"
+  },
+  {
+    "demo_name": "【開くボタン静的設置】スライドイン（左から）",
+    "demo_slug": "static-button-slide-in-brfrom-left",
+    "demo_description": "静的に設置した開くボタンから、左からスライドイン形式でモーダルを開閉します。"
+  },
+  {
+    "demo_name": "【開くボタン静的設置】スライドイン（右から）",
+    "demo_slug": "static-button-slide-in-brfrom-right",
+    "demo_description": "静的に設置した開くボタンから、右からスライドイン形式でモーダルを開閉します。"
+  },
+  {
+    "demo_name": "【開くボタン静的設置】スライドイン（上から）",
+    "demo_slug": "static-button-slide-in-brfrom-top",
+    "demo_description": "静的に設置した開くボタンから、上からスライドイン形式でモーダルを開閉します。"
+  }
+]

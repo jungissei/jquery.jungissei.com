@@ -1,0 +1,190 @@
+@use "sass:math";
+@use "../../lib/css/sp/setting" as *;
+@use "../../lib/css/mixin" as *;
+
+// ----------------------------------------------------------------------------
+// ハンバーガーメニュー
+// ハンバーガーメニュー mixin
+// ハンバーガーメニューを開くボタン
+// ハンバーガーメニューダイアログ
+// ----------------------------------------------------------------------------
+// --------------------------------------
+// ハンバーガーメニュー mixin
+// --------------------------------------
+@mixin active_btn(){
+  .btn_line{
+    &::before{
+      transform: translateY(-50%);
+      top: 50%;
+    }
+
+    &::after{
+      transform: translateY(50%);
+      bottom: 50%;
+    }
+  }
+}
+
+@include mq($device){
+
+  // --------------------------------------
+  // ハンバーガーメニューを開くボタン
+  // --------------------------------------
+  // Button size related
+  $btn_with: 50px;
+  $btn_height: 50px;
+
+  // Button line related
+  $btn_line_width: 60%;
+  $btn_line_height: 1px;
+
+  // Button color related
+  $btn_color: #716e77;
+  $btn_line_color: #ffffff;
+
+  .hamburger_menu_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: $btn_color;
+    width: $btn_with;
+    padding: math.div($btn_height, 2) 0;
+    cursor: pointer;
+    overflow: hidden;
+
+
+    &.is_fixed{
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 4;
+    }
+
+    .btn_line{
+      display: block;
+      background-color: $btn_line_color;
+      width: $btn_line_width;
+      height: $btn_line_height;
+
+      &::before,
+      &::after{
+        content: '';
+        display: block;
+        background-color: $btn_line_color;
+        width: $btn_line_width;
+        height: $btn_line_height;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      &::before{
+        top: 30%;
+        transform: translateY(0);
+        transition: top 0.2s ease, transform 0.2s ease;
+      }
+
+      &::after{
+        bottom: 30%;
+        transform: translateY(0);
+        transition: bottom 0.2s ease, transform 0.2s ease;
+      }
+    }
+
+    @include hover(('.is_active')){
+      @include active_btn();
+    }
+  }
+
+
+  // --------------------------------------
+  // ハンバーガーメニューダイアログ
+  // --------------------------------------
+  .hamburger_menu_dialog {
+    padding: 0;
+    max-width: 600px;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    // モーダルが開いた時
+    &[data-modal-active="true"]{
+      opacity: 1;
+    }
+
+    // --------------------------------------
+    // Modal Backdrop（オーバーレイ）
+    // --------------------------------------
+    &::backdrop {
+      backdrop-filter: blur(4px);
+      background-color: rgba(#000, 0.7);
+      cursor: pointer;
+    }
+
+
+    // --------------------------------------
+    // Modal Content
+    // --------------------------------------
+    .dialog_content{
+      padding: 50px 30px;
+      background-color: #ccc;
+      height: 100%;
+    }
+
+    // --------------------------------------
+    // Modal Close Button
+    // --------------------------------------
+    .dialog_close {
+      // Button size related
+      $btn_with: 50px;
+      $btn_height: 50px;
+
+      // Button line related
+      $btn_line_width: 60%;
+      $btn_line_height: 2px;
+
+      // Button color related
+      $btn_color: transparent;
+      $btn_line_color: #716e77;
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      overflow: hidden;
+      background-color: $btn_color;
+      width: $btn_with;
+      padding: math.div($btn_height, 2) 0;
+      cursor: pointer;
+
+
+      &::before,
+      &::after{
+        content: "";
+        display: block;
+        position: absolute;
+        right: 0;
+        left: 0;
+        margin-right: auto;
+        margin-left: auto;
+        background-color: $btn_line_color;
+        width: $btn_line_width;
+        height: $btn_line_height;
+      }
+
+      &::before {
+        top: calc(50% - (#{$btn_line_height} / 2));
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        bottom: calc(50% - (#{$btn_line_height} / 2));
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}

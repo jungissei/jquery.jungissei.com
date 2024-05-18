@@ -1,0 +1,28 @@
+@use "sass:math";
+@use "./setting" as *;
+@use "./../mixin" as *;
+
+@include mq($device){
+  .block_content1_layout{
+    margin-bottom: 50px;
+  }
+
+  .block_content1 {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+
+    &.block_revers {
+      flex-direction: row-reverse;
+    }
+
+    > .block_col {
+      &:first-child{
+        width: calc(40% - 15px);
+      }
+      &:last-child{
+        width: calc(60% - 15px);
+      }
+    }
+  }
+}
