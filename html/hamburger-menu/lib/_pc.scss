@@ -180,8 +180,8 @@
       height: 100%;
       max-height: calc(100vh - 60px);
       opacity: 0;
-      transition: transform 0.3s ease;
-      transform: translateY(100%);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      transform: translateY(-100%);
 
       @include only_safari{
         max-height: calc(100svh - 60px);
