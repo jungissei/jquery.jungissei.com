@@ -1,22 +1,22 @@
 [
   {
     "demo_name": "ダイアログ フェード形式",
-    "demo_slug": "button-fade",
+    "demo_slug": "fade",
     "demo_description": "フェードでモーダルダイアログを開閉します。"
   },
   {
     "demo_name": "ダイアログ スライドイン（左から）",
-    "demo_slug": "button-slide-in-from-left",
+    "demo_slug": "slide-in-from-left",
     "demo_description": "左からスライドインでモーダルダイアログ開閉します。"
   },
   {
     "demo_name": "ダイアログ スライドイン（右から）",
-    "demo_slug": "button-slide-in-from-right",
+    "demo_slug": "slide-in-from-right",
     "demo_description": "右からスライドインでモーダルダイアログ開閉します。"
   },
   {
     "demo_name": "ダイアログ スライドイン（上から）",
-    "demo_slug": "button-slide-in-from-top",
+    "demo_slug": "slide-in-from-top",
     "demo_description": "上からスライドインでモーダルダイアログ開閉します。"
   }
 ]

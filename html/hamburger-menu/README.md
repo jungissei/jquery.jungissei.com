@@ -73,8 +73,6 @@ $(function(){
 
     if($hamburger_menu_open.css('position') == 'fixed'){
 
-      console.log(123);
-
       $hamburger_menu_open.css(
         'right',
         parseInt($hamburger_menu_open.css('right')) + (window.innerWidth - document.body.clientWidth)

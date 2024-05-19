@@ -51,7 +51,6 @@
       }
     },
 
-
     /**
      * モーダルのアニメーションが完了するのを待つ
      * @param {HTMLElement} modal モーダルダイアログ要素
@@ -60,17 +59,17 @@
     waitModalAnimation: function (modal) {
 
       // モーダル内のアニメーションがない場合、すぐに解決されたPromiseを返す
-      if ($(modal).find(":animated").length === 0){
+      // if ($(modal).find(":animated").length === 0 && !$(modal).is(":hidden")){
+      if (modal.getAnimations().length === 0){
+        console.log("no animation");
         return Promise.resolve([]);
       }
 
       // モーダル内の全てのアニメーションが完了するのを待つ
       return Promise.allSettled(
-        $(modal)
-          .find(":animated")
-          .map(function(_, animation) {
-            return animation.finished;
-          })
+        [...modal.getAnimations()].map(function(animation) {
+          return animation.finished;
+        })
       );
     },
 
