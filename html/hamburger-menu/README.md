@@ -63,19 +63,33 @@ body閉じタグ前に追加する。必要であれば`jquery.smooth-scroll.js`
 ```
 
 ```JavaScript
-// ----------------------------------------------------------------------------
-// HamburgerMenu
-// ----------------------------------------------------------------------------
 $(function(){
 
   let $hamburger_menu =  $('#hamburger_menu'),
       $hamburger_menu_open = $('[data-modal-open="hamburger_menu"]');
       active_class = 'is_active';
 
+  $hamburger_menu.on('modal.before_open', function() {
+
+    if($hamburger_menu_open.css('position') == 'fixed'){
+
+      $hamburger_menu_open.css(
+        'right',
+        parseInt($hamburger_menu_open.css('right')) + (window.innerWidth - document.body.clientWidth)
+      );
+    }
+  });
+
   $hamburger_menu.on('modal.after_open', function() {
     $hamburger_menu_open.addClass(active_class);
   });
 
+  $hamburger_menu.on('modal.before_close', function() {
+
+    if($hamburger_menu_open.css('position') == 'fixed'){
+      $hamburger_menu_open.css('right','');
+    }
+  });
   $hamburger_menu.on('modal.after_close', function() {
     $hamburger_menu_open.removeClass(active_class);
   });
@@ -89,22 +103,10 @@ $(function(){
   });
 });
 
-
-
-
-// ----------------------------------------------------------------------------
-// SmoothScroll
-// ----------------------------------------------------------------------------
-$('a:not([data-smooth-scroll="false"])').smoothScroll({
-  beforeScroll: function () {
-
-    $('a:not([data-smooth-scroll="false"])').trigger('smooth_scroll.before');
-  }
-});
-
 ```
 
 
 ## テスト
 
 - [ ] ページ内リンクをクリックしたときにモーダルダイアログが閉じるか
+- [ ] 固定ボタンが`position:fixed;`時、スクロール無効化されたときに位置ズレを起こさないか
