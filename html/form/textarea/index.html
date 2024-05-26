@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <!--#include virtual="/lib/inc/head_begin.shtml" -->
+    <meta charset="UTF-8">
+    <title>Textarea | Form | jQuery UI LIST / Jung Issei</title>
+    <!--#include virtual="/lib/inc/head_close.shtml" -->
+    <!--#include virtual="/form/lib/head_close.shtml" -->
+  </head>
+  <body class="pc_solid">
+    <!--#include virtual="/lib/inc/body_begin.shtml" -->
+
+    <div id="wrapper">
+
+      <header>
+
+
+
+      </header>
+
+      <main>
+
+        <!--#include virtual="/lib/inc/breadcrumb.shtml" -->
+
+        <div id="demo_layout" class="page_layout layout1">
+          <div class="layout_inner">
+            <div class="layout_container">
+              <div class="layout_width">
+
+                <!--#include virtual="/lib/inc/demo_name.shtml" -->
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="page_layout layout1">
+          <div class="layout_inner">
+            <div class="layout_container">
+              <div class="layout_width">
+
+
+
+                <!-- Form Start-->
+                <div class="block_form">
+                  <form
+                    id="area_form"
+                    class="form_wrp"
+                    aria-labelledby="form_title"
+                    action="#"
+                    method="get"
+                  >
+                    <!-- Form Table Start-->
+                    <div class="form_table">
+                      <div class="table_tr">
+                        <div class="table_th require">
+                          <label for="your_message" class="form_table_label">
+                            テキストエリア
+                          </label>
+                        </div>
+                        <div class="table_td">
+                          <textarea
+                            name="your_message"
+                            id="your_message"
+                            cols="40"
+                            rows="5"
+                            class="form_control"
+                            placeholder="お問い合わせ内容を入力"
+                            required
+                            aria-describedby="your_message_remark"
+                          ></textarea>
+                          <ul id="your_message_remark" class="form_remark">
+                            <li>
+                              入力欄の説明が入ります。入力欄の説明が入ります。入力欄の説明が入ります。入力欄の説明が入ります。
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Form Table End -->
+
+                    <!-- Submit Button Start -->
+                    <div class="btn_submit">
+                      <input
+                        id="form_submit"
+                        class="btn_inner"
+                        type="submit"
+                        aria-label="送信"
+                        value="送信"
+                     >
+                    </div>
+                    <!-- Submit Button End -->
+                  </form>
+                </div>
+                <!-- Form End -->
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+      </main>
+      <footer>
+
+      </footer>
+
+    </div>
+
+    <!--#include virtual="/lib/inc/body_close.shtml" -->
+    <!--#include virtual="/form/lib/body_close.shtml" -->
+    <script defer src="./scripts.js"></script>
+
+  </body>
+</html>
