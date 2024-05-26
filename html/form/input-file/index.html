@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <!--#include virtual="/lib/inc/head_begin.shtml" -->
+    <meta charset="UTF-8">
+    <title>Input(file) | Form | jQuery UI LIST / Jung Issei</title>
+    <!--#include virtual="/lib/inc/head_close.shtml" -->
+    <!--#include virtual="/form/lib/head_close.shtml" -->
+  </head>
+  <body class="pc_solid">
+    <!--#include virtual="/lib/inc/body_begin.shtml" -->
+
+    <div id="wrapper">
+
+      <header>
+
+
+
+      </header>
+
+      <main>
+
+        <!--#include virtual="/lib/inc/breadcrumb.shtml" -->
+
+        <div id="demo_layout" class="page_layout layout1">
+          <div class="layout_inner">
+            <div class="layout_container">
+              <div class="layout_width">
+
+                <!--#include virtual="/lib/inc/demo_name.shtml" -->
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="page_layout layout1">
+          <div class="layout_inner">
+            <div class="layout_container">
+              <div class="layout_width">
+
+                <!-- Form Start-->
+                <div class="block_form">
+                  <form
+                    id="area_form"
+                    class="form_wrp"
+                    aria-labelledby="form_title"
+                    action="#"
+                    method="get"
+                  >
+                    <!-- Form Table Start-->
+                    <div class="form_table">
+                      <div class="table_tr">
+                        <div class="table_th require">
+                          <label for="pic" class="form_table_label"
+                            >画像ファイル</label
+                          >
+                        </div>
+                        <div class="table_td">
+                          <div class="form_file" data-error-placement-wrap>
+                            <input
+                              type="file"
+                              id="pic"
+                              class="form_require"
+                              name="pic"
+                              accept="image/*"
+                              required
+                              aria-describedby="pic_remark"
+                              data-error-placement="false"
+                            >
+                            <label class="file_label" for="pic">
+                              <span class="label_btn">ファイルを選択</span>
+                              <span class="label_file_name">選択されていません</span>
+                            </label>
+                            <div data-error-placement="true"></div>
+                          </div>
+                          <ul id="pic_remark" class="form_remark">
+                            <li>
+                              入力欄の説明が入ります。入力欄の説明が入ります。入力欄の説明が入ります。入力欄の説明が入ります。
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Form Table End -->
+
+                    <!-- Submit Button Start -->
+                    <div class="btn_submit">
+                      <input
+                        id="form_submit"
+                        class="btn_inner"
+                        type="submit"
+                        aria-label="送信"
+                        value="送信"
+                      >
+                    </div>
+                    <!-- Submit Button End -->
+                  </form>
+                </div>
+                <!-- Form End -->
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+      </main>
+      <footer>
+
+      </footer>
+
+    </div>
+
+    <!--#include virtual="/lib/inc/body_close.shtml" -->
+    <!--#include virtual="/form/lib/body_close.shtml" -->
+    <script defer src="./scripts.js"></script>
+
+  </body>
+</html>

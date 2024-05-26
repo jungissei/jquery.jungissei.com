@@ -20,7 +20,7 @@
     "demo_slug" : "input-checkbox",
     "demo_description" : "チェックボックスの入力欄"
   },{
-    "demo_name" : "Input(file)e",
+    "demo_name" : "Input(file)",
     "demo_slug" : "input-file",
     "demo_description" : "ファイルアップロードの入力欄"
   },{
