@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>テキストの入力欄 | Form | jQuery UI LIST / Jung Issei</title>
     <!--#include virtual="/lib/inc/head_close.shtml" -->
-    <!--#include virtual="/hamburger-menu/lib/head_close.shtml" -->
+    <!--#include virtual="/form/lib/head_close.shtml" -->
   </head>
   <body class="pc_solid">
     <!--#include virtual="/lib/inc/body_begin.shtml" -->
@@ -35,6 +35,128 @@
         </div>
 
 
+        <div class="page_layout layout1">
+          <div class="layout_inner">
+            <div class="layout_container">
+              <div class="layout_width">
+
+
+                <!-- Form Start-->
+                <div class="block_form">
+                  <form
+                    id="area_form"
+                    class="form_wrp"
+                    aria-labelledby="form_title"
+                    action="#"
+                    method="get"
+                  >
+
+                    <!-- Form Table Start-->
+                    <div class="form_table">
+                      <!-- .table_tr ここから -->
+                      <div class="table_tr">
+                        <div class="table_th require">
+                          <label for="your_name" class="form_table_label">
+                            お名前
+                          </label>
+                        </div>
+                        <div class="table_td">
+                          <input
+                            id="your_name"
+                            class="form_control"
+                            name="your_name"
+                            type="text"
+                            placeholder="田中 太郎"
+                            autocomplete="name"
+                            required
+                            aria-describedby="your_name_remark"
+                          >
+                          <ul id="your_name_remark" class="form_remark">
+                            <li>入力欄の説明が入ります。入力欄の説明が入ります。入力欄の説明が入ります。入力欄の説明が入ります。</li>
+                          </ul>
+                        </div>
+                      </div>
+                      <!-- .table_tr ここまで -->
+                      <!-- .table_tr ここから -->
+                      <div class="table_tr">
+                        <fieldset class="table_fieldset">
+                          <legend class="table_th require">
+                            お名前(別々)
+                          </legend>
+                          <div class="table_td">
+                            <div
+                              class="form_name_group"
+                              data-valid-group="required_all"
+                            >
+                              <div class="group_row">
+                                <div class="group_col">
+                                  <input
+                                    id="your_family_name"
+                                    class="form_control"
+                                    name="your_family_name"
+                                    type="text"
+                                    placeholder="田中"
+                                    autocomplete="family-name"
+                                    required
+                                    data-valid-group-item="required_all"
+                                    aria-describedby="your_family_name_remark"
+                                    aria-label="姓"
+                                  >
+                                </div>
+                                <div class="group_col">
+                                  <input
+                                    id="your_given_name"
+                                    class="form_control"
+                                    name="your_given_name"
+                                    type="text"
+                                    placeholder="太郎"
+                                    autocomplete="given-name"
+                                    required
+                                    data-valid-group-item="required_all"
+                                    aria-describedby="your_given_name_remark"
+                                    aria-label="名"
+                                  >
+                                </div>
+                              </div>
+                            </div>
+                            <ul id="your_family_name_remark" class="form_remark">
+                              <li>
+                                入力欄の説明が入ります。入力欄の説明が入ります。入力欄の説明が入ります。入力欄の説明が入ります。
+                              </li>
+                            </ul>
+                            <ul id="your_given_name_remark" class="form_remark">
+                              <li>
+                                入力欄の説明が入ります。入力欄の説明が入ります。入力欄の説明が入ります。入力欄の説明が入ります。
+                              </li>
+                            </ul>
+                          </div>
+                      </fieldset>
+                    </div>
+                      <!-- .table_tr ここまで -->
+
+                    </div>
+                    <!-- Form Table End -->
+                    <!-- Submit Button Start -->
+                    <div class="btn_submit">
+                      <input
+                        id="form_submit"
+                        class="btn_inner"
+                        type="submit"
+                        aria-label="送信"
+                        value="送信"
+                      >
+                    </div>
+                    <!-- Submit Button End -->
+                  </form>
+                </div>
+                <!-- Form End -->
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
 
       </main>
       <footer>
@@ -44,9 +166,7 @@
     </div>
 
     <!--#include virtual="/lib/inc/body_close.shtml" -->
-    <!--#include virtual="/hamburger-menu/lib/body_close.shtml" -->
-
-    <script src="./scripts.js"></script>
+    <!--#include virtual="/form/lib/body_close.shtml" -->
 
   </body>
 </html>

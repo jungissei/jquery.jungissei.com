@@ -2,113 +2,755 @@
 @use "../../lib/css/pc/setting" as *;
 @use "../../lib/css/mixin" as *;
 
+
+
+// ----------------------------------------------------------------------------
+// 【Table Of Content】
+//
+// Variables
+//    Form item
+// Mixin
+//    Hyphen separated
+//    Form control
+// Form styles
+//    Block form
+//    Form area
+//    Form layout
+//        List Block
+//        List Inline block
+//        Address group
+//        Separated address group
+//        Name separated group
+//        TEL separated group
+//        Mail double check group
+//        Postal code
+//        Remark
+//    Form item
+//        Input Text
+//        Input Radio button
+//        Input Check box
+//        Input File
+//        Input Date (flatpickr)
+//        Select
+//        Textarea
+//        Submit Button
+//        Error message
+//  Privacy policy
+// ----------------------------------------------------------------------------
+
+
+// ----------------------------------------------------------------------------
+// Variables
+// ----------------------------------------------------------------------------
+
+// --------------------------------------
+// Form item
+// --------------------------------------
+$input_txt_color: #212529;
+$txt_placeholder_color: #ccc;
+$focus_color: #81c3e2;
+$border_color: #ced4da;
+
+
+
+// ----------------------------------------------------------------------------
+// Mixin
+// ----------------------------------------------------------------------------
+// --------------------------------------
+// Hyphen separated
+// --------------------------------------
+@mixin hyphen_separated{
+  width: 4.25em;
+
+  &:not(:last-child){
+    position: relative;
+    margin-right: 2em;
+
+    &::before{
+      display: block;
+      position: absolute;
+      top: 14px;
+      right: -1.5em;
+      content: "\2015";
+      width: 1em;
+      color: #ced4da;
+    }
+  }
+}
+
+
+// --------------------------------------
+// Form control
+// --------------------------------------
+@mixin form_control {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  color: $input_txt_color;
+  background-color: #fff;
+  border: 1px solid $border_color;
+  appearance: none;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  width: 100%;
+  text-align: left;
+
+  &::placeholder {
+    color: $txt_placeholder_color;
+  }
+
+  &:hover,
+  &:focus {
+    border: 1px solid $focus_color;
+    box-shadow: 0 0 0 4px rgba($focus_color, 0.5);
+    outline: unset;
+  }
+}
+
+
+
 @include mq($device){
-
-  // ----------------------------------------------------------------------------
-  // Modal
-  // マウスやタップ操作時のoutlineの出現を抑制
-  // Modal Dialog
-  // Modal Backdrop（オーバーレイ）
-  // Modal Close Button
-  // ----------------------------------------------------------------------------
-
   // --------------------------------------
-  // マウスやタップ操作時のoutlineの出現を抑制
+  // Block form
   // --------------------------------------
-  :focus:not(:focus-visible),
-  :where(:root[data-mousedown] dialog *),
-  [data-modal-open]:where(:root[data-mousedown] *) {
-    outline: none;
+  .block_form{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #fff;
   }
 
   // --------------------------------------
-  // Modal Dialog
+  // Form area
   // --------------------------------------
-  .modal_dialog {
-    padding: 0;
-    max-width: 600px;
-    width: 100%;
-    max-height: calc(100vh - 60px);
-    opacity: 0;
-    transition: opacity 0.3s ease;
+  .form_wrp {
+    .form_table {
+      width: 100%;
+      margin-right: auto;
+      margin-left: auto;
 
-    // Safariの時
-    @include only_safari{
-      max-height: calc(100svh - 60px);
+      .table_tr {
+        display: flex;
+        justify-content: space-between;
+
+        .table_fieldset{
+          display: contents;
+        }
+
+        .table_th,
+        .table_td {
+          font-weight: normal;
+        }
+
+        &:not(:last-child) {
+          .table_td {
+            padding: 0 0 20px 20px;
+          }
+        }
+
+        &:last-child {
+          .table_td {
+            padding-left: 20px;
+          }
+        }
+
+        .table_th {
+          position: relative;
+          padding: 15px 0 0 52px;
+          width: 200px;
+
+          .form_label {
+            position: absolute;
+            top: 15px;
+            left: 0;
+            color: #fff;
+            font-size: 13px;
+            padding: 2px 8px;
+            font-weight: 700;
+          }
+
+          &:not(.require) {
+            .form_label {
+              color: #055160;
+              background-color: #cff4fc;
+            }
+          }
+
+          &.require {
+            .form_label {
+              background-color: #fbd0da;
+              color: #5f071c;
+            }
+          }
+        }
+
+        .table_td {
+          width: calc(100% - 215px);
+        }
+      }
+
+      .td_sub_ttl{
+        font-size: 14px;
+        margin-bottom: 3px;
+      }
+
     }
+  }
 
-    // モーダルが開いた時
-    &[data-modal-active="true"]{
-      opacity: 1;
-    }
-
-    // --------------------------------------
-    // Modal Backdrop（オーバーレイ）
-    // --------------------------------------
-    &::backdrop {
-      backdrop-filter: blur(4px);
-      background-color: rgba(#000, 0.7);
-      cursor: pointer;
-    }
-
-
-    // --------------------------------------
-    // Modal Content
-    // --------------------------------------
-    .dialog_content{
-      padding: 50px 30px;
-      background-color: #ccc;
-    }
-
-    // --------------------------------------
-    // Modal Close Button
-    // --------------------------------------
-    .dialog_close {
-      // Button size related
-      $btn_with: 50px;
-      $btn_height: 50px;
-
-      // Button line related
-      $btn_line_width: 60%;
-      $btn_line_height: 2px;
-
-      // Button color related
-      $btn_color: transparent;
-      $btn_line_color: #716e77;
+  // --------------------------------------
+  // Form layout
+  // --------------------------------------
+  // List Block
+  .form_item_block_pc {
+    li {
       display: block;
+
+      &:not(:last-child) {
+        margin-bottom: 8px;
+      }
+    }
+  }
+
+  // List Inline block
+  .form_item_inline_block_pc {
+    li {
+      display: inline-block;
+
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+    }
+  }
+
+  // Address group
+  .form_address_group {
+    padding-top: 15px;
+
+    .group_row1{
+      margin-bottom: 3px;
+    }
+    .group_row2{
+      display: flex;
+      align-items: center;
+
+      .group_col1{
+        width: 10em;
+      }
+      .group_col2{
+        padding-left: 0.5em;
+      }
+    }
+    .group_row3{
+      margin-bottom: 3px;
+    }
+
+    .group_txt {
+      display: block;
+      font-size: 14px;
+    }
+  }
+
+  // Separated address group
+  .form_separated_address_group{
+    .group_row1{
+      margin-bottom: 3px;
+    }
+    .group_row2{
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+
+      .group_col2{
+        padding-left: 0.5em;
+      }
+    }
+    .group_row3{
+      margin-bottom: 8px;
+    }
+    .group_row4{
+      margin-bottom: 8px;
+    }
+
+    .group_txt{
+      display: block;
+      font-size: 14px;
+    }
+
+
+    .group_postal_code {
+      .group_postal_code_row {
+        display: flex;
+
+        .group_postal_code_col {
+          @include hyphen_separated;
+        }
+      }
+    }
+  }
+
+
+  // Name separated group
+  .form_name_group {
+    .group_row{
+      display: flex;
+      justify-content: space-between;
+
+      .group_col {
+        width: calc(50% - 7.5px);
+      }
+    }
+  }
+
+
+
+  // TEL separated group
+  .form_tel_group {
+    .group_row{
+      display: flex;
+
+      .group_col {
+        @include hyphen_separated;
+      }
+    }
+  }
+
+
+
+  // Mail double check group
+  .form_mail_group {
+    .group_row1{
+      margin-bottom: 15px;
+    }
+    .group_row2{
+      margin-bottom: 3px;
+    }
+    .group_txt{
+      font-size: 14px;
+    }
+  }
+
+  // Postal code
+  .form_postal_code {
+    position: relative;
+    padding-left: 1.5em;
+
+    &::before {
       position: absolute;
-      top: 0;
-      right: 0;
-      overflow: hidden;
-      background-color: $btn_color;
-      width: $btn_with;
-      padding: math.div($btn_height, 2) 0;
+      top: 0.8em;
+      left: 0;
+      content: "\3012";
+    }
+  }
+
+  .ajaxzip3_btn {
+    .btn_inner {
+      font-size: 14px;
+      border: 1px solid $border_color;
+      padding: 8px;
+      transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
       cursor: pointer;
 
+      &:hover {
+        border: 1px solid $focus_color;
+        box-shadow: 0 0 0 4px rgba($focus_color, 0.5);
+      }
+    }
+  }
 
-      &::before,
-      &::after{
-        content: "";
-        display: block;
-        position: absolute;
-        right: 0;
-        left: 0;
-        margin-right: auto;
-        margin-left: auto;
-        background-color: $btn_line_color;
-        width: $btn_line_width;
-        height: $btn_line_height;
+  // Remark
+  .form_remark {
+    padding-top: 8px;
+
+    li {
+      position: relative;
+      font-size: 14px;
+      padding-left: 1.4em;
+      line-height: 1.2;
+
+      &:not(:last-child) {
+        margin-bottom: 15px;
       }
 
       &::before {
-        top: calc(50% - (#{$btn_line_height} / 2));
-        transform: rotate(45deg);
-      }
-
-      &::after {
-        bottom: calc(50% - (#{$btn_line_height} / 2));
-        transform: rotate(-45deg);
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "※";
       }
     }
   }
+
+
+  .form_wrp {
+    max-width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+
+
+    // --------------------------------------
+    // Form item
+    // --------------------------------------
+    // Input Text
+    input{
+      &.form_control {
+        @include form_control;
+      }
+    }
+
+    // Input Radio button
+    .form_radio {
+      padding-top: 15px;
+
+      li {
+        label {
+          display: block;
+          position: relative;
+          cursor: pointer;
+
+          input[type="radio"] {
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            opacity: 0;
+
+            + .form_list_item_label {
+              display: inline-block;
+              position: relative;
+              line-height: 1.65;
+              padding-left: 1.5em;
+
+              &::before {
+                position: absolute;
+                top: 3px;
+                left: 0;
+                content: "";
+                width: 20px;
+                height: 20px;
+                border: 1px solid $border_color;
+                border-radius: 50%;
+                background-color: #fff;
+                transition: all 0.2s;
+              }
+
+              &::after {
+                position: absolute;
+                top: 7px;
+                left: 4px;
+                content: "";
+                width: 1em;
+                height: 1em;
+                width: 12px;
+                height: 12px;
+                transition: transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75);
+                transform: scale(0, 0);
+                border-radius: 50%;
+                background: $focus_color;
+              }
+
+              &:hover{
+                &::before {
+                  border: 1px solid $focus_color;
+                  box-shadow: 0 0 0 3px rgba($focus_color, 0.5);
+                }
+              }
+            }
+
+            &:focus{
+              + .form_list_item_label {
+
+                &::before {
+                  border: 1px solid $focus_color;
+                  box-shadow: 0 0 0 3px rgba($focus_color, 0.5);
+                }
+              }
+            }
+
+
+            &:checked {
+              + .form_list_item_label {
+                &::after {
+                  transform: scale(1, 1);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // Input Check box
+    .form_check {
+      li {
+        label {
+          display: block;
+          position: relative;
+          cursor: pointer;
+          overflow: hidden;
+          padding-left: 3px;
+          margin-left: -3px;
+
+          input[type="checkbox"] {
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            opacity: 0;
+
+            + .form_list_item_label {
+              display: inline-block;
+              position: relative;
+              line-height: 1.65;
+              padding-left: 1.5em;
+
+              &::before {
+                position: absolute;
+                top: 3px;
+                left: 0;
+                content: "";
+                width: 20px;
+                height: 20px;
+                border: 1px solid $border_color;
+                background: #fff;
+              }
+
+              &::after {
+                display: block;
+                position: absolute;
+                top: 3px;
+                left: 6px;
+                content: "";
+                width: 8px;
+                height: 15px;
+                border-right: 3px solid $focus_color;
+                border-bottom: 3px solid $focus_color;
+                transition: transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75);
+                transform: scale(0, 0) rotate(43deg);
+              }
+
+              &:hover{
+                &::before {
+                  border: 1px solid $focus_color;
+                  box-shadow: 0 0 0 3px rgba($focus_color, 0.5);
+                }
+              }
+            }
+
+            &:focus{
+              + .form_list_item_label {
+
+                &::before {
+                  border: 1px solid $focus_color;
+                  box-shadow: 0 0 0 3px rgba($focus_color, 0.5);
+                }
+              }
+            }
+
+            &:checked {
+              + .form_list_item_label {
+                &::after {
+                  transform: scale(1, 1) rotate(43deg);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+
+    // Input File
+    .form_file {
+      position: relative;
+      font-size: 14px;
+      padding-top: 5px;
+
+      input {
+        position: absolute;
+        top: -200%;
+        left: -200%;
+        outline: 0;
+        opacity: 0;
+        width: 0;
+        height: 0;
+
+        &:focus{
+          ~ .file_label{
+            .label_btn {
+              border: 1px solid $focus_color;
+              box-shadow: 0 0 0 4px rgba($focus_color, 0.5);
+            }
+          }
+        }
+      }
+
+      .file_label{
+        display: flex;
+
+        .label_btn{
+          border: 1px solid $border_color;
+          padding: 8px;
+          transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+          cursor: pointer;
+          width: 116px;
+          text-align: center;
+          align-self: flex-start;
+        }
+
+        .label_file_name{
+          padding: 9px 8px 0;
+          line-height: 1.2;
+          cursor: pointer;
+          width: calc(100% - 116px);
+        }
+
+        &:hover {
+          .label_btn {
+            border: 1px solid $focus_color;
+            box-shadow: 0 0 0 4px rgba($focus_color, 0.5);
+          }
+        }
+      }
+    }
+
+
+    // Input Date (flatpickr)
+    .flatpickr-calendar
+      .flatpickr-innerContainer
+      .flatpickr-weekdays
+      .flatpickr-weekday:nth-child(7n + 1),
+    .flatpickr-calendar
+      .flatpickr-innerContainer
+      .flatpickr-days
+      .flatpickr-day:not(.flatpickr-disabled):not(.prevMonthDay):not(.nextMonthDay):nth-child(7n + 1)
+    {
+      color: red;
+    }
+
+    .flatpickr-calendar
+      .flatpickr-innerContainer
+      .flatpickr-weekdays
+      .flatpickr-weekday:nth-child(7),
+    .flatpickr-calendar
+      .flatpickr-innerContainer
+      .flatpickr-days
+      .flatpickr-day:not(.flatpickr-disabled):not(.prevMonthDay):not(.nextMonthDay):nth-child(7n)
+    {
+      color: blue;
+    }
+
+    // Select
+    .form_select {
+      position: relative;
+
+      select {
+        background-image: url(../img/arrow_down.svg);
+        background-position: right 15px center;
+        background-size: 13px 8px;
+        background-repeat: no-repeat;
+        @include form_control;
+      }
+
+      &.select_pref{
+        width: 17.25em;
+      }
+    }
+
+    // Textarea
+    textarea {
+      &.form_control {
+        resize: vertical;
+        @include form_control;
+      }
+    }
+
+
+    // Submit Button
+    .btn_submit {
+      margin-top: 30px;
+
+      .btn_inner {
+        display: block;
+        line-height: 1;
+        padding: 1em 4em;
+        margin-right: auto;
+        margin-left: auto;
+        transition: all 0.2s;
+        font-weight: bold;
+        font-size: 16px;
+        min-width: 200px;
+        text-align: center;
+        color: #fff;
+        transition: all 0.2s;
+
+        &:disabled{
+          border: 1px solid #ccc;
+          background-color: #ccc;
+        }
+
+        &:not(:disabled){
+          color: #fff;
+          background-color: #0d6efd;
+          border: 1px solid  #0d6efd;
+
+          &:hover {
+            opacity: 0.7;
+          }
+        }
+      }
+    }
+
+    // Error message
+    label.error {
+      display: block;
+      color: #cc0000;
+      padding: 5px 10px;
+      background: #f4e4e4;
+      font-size: 0.9em;
+      font-weight: bold;
+      margin-top: 0.5em;
+    }
+  }
+
+
+  // ----------------------------------------------------------------------------
+  // Privacy policy
+  // ----------------------------------------------------------------------------
+  .form_privacy {
+    margin-top: 30px;
+
+    >*[class^="form_privacy_row"]{
+      &:not(:last-child){
+        margin-bottom: 15px;
+      }
+    }
+
+
+    .privacy_ttl {
+      .ttl_inner {
+        display: block;
+        font-weight: bold;
+        font-size: 20px;
+      }
+    }
+
+    .privacy_txt{
+      height: 200px;
+      border: #c0c0c0 1px solid;
+      padding: 30px;
+      box-shadow: inset -1px 2px 4px #dfdfdf;
+      font-size: 14px;
+
+      p{
+        &:not(:last-child){
+          margin-bottom: 15px;
+        }
+      }
+
+
+    }
+
+    .privacy_check{
+      text-align: center;
+    }
+  }
+
 }
