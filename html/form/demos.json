@@ -1,0 +1,47 @@
+[
+  {
+    "demo_name" : "Input(text)",
+    "demo_slug" : "input-text",
+    "demo_description" : "テキストの入力欄"
+  },{
+    "demo_name" : "Input(email)",
+    "demo_slug" : "input-email",
+    "demo_description" : "メールアドレスの入力欄"
+  },{
+    "demo_name" : "Input(tel)",
+    "demo_slug" : "input-tel",
+    "demo_description" : "電話番号の入力欄"
+  },{
+    "demo_name" : "Input(radio)",
+    "demo_slug" : "input-radio",
+    "demo_description" : "ラジオボタンの入力欄"
+  },{
+    "demo_name" : "Input(checkbox)",
+    "demo_slug" : "input-checkbox",
+    "demo_description" : "チェックボックスの入力欄"
+  },{
+    "demo_name" : "Input(file)e",
+    "demo_slug" : "input-file",
+    "demo_description" : "ファイルアップロードの入力欄"
+  },{
+    "demo_name" : "Input(date)",
+    "demo_slug" : "input-date",
+    "demo_description" : "日付の入力欄"
+  },{
+    "demo_name" : "Select",
+    "demo_slug" : "select",
+    "demo_description" : "選択肢の入力欄"
+  },{
+    "demo_name" : "Address",
+    "demo_slug" : "address",
+    "demo_description" : "住所の入力欄"
+  },{
+    "demo_name" : "Textarea",
+    "demo_slug" : "textarea",
+    "demo_description" : "テキストエリアの入力欄"
+  },{
+    "demo_name" : "Privacy policy",
+    "demo_slug" : "privacy-policy",
+    "demo_description" : "プライバシーポリシーの入力欄"
+  }
+]

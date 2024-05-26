@@ -1,0 +1,114 @@
+@use "sass:math";
+@use "../../lib/css/sp/setting" as *;
+@use "../../lib/css/mixin" as *;
+
+@include mq($device){
+
+  // ----------------------------------------------------------------------------
+  // Modal
+  // マウスやタップ操作時のoutlineの出現を抑制
+  // Modal Dialog
+  // Modal Backdrop（オーバーレイ）
+  // Modal Close Button
+  // ----------------------------------------------------------------------------
+
+  // --------------------------------------
+  // マウスやタップ操作時のoutlineの出現を抑制
+  // --------------------------------------
+  :focus:not(:focus-visible),
+  :where(:root[data-mousedown] dialog *),
+  [data-modal-open]:where(:root[data-mousedown] *) {
+    outline: none;
+  }
+
+  // --------------------------------------
+  // Modal Dialog
+  // --------------------------------------
+  .modal_dialog {
+    padding: 0;
+    max-width: 600px;
+    width: calc(100% - 40px);
+    max-height: calc(100vh - 60px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    // Safariの時
+    @include only_safari{
+      max-height: calc(100svh - 60px);
+    }
+
+    // モーダルが開いた時
+    &[data-modal-active="true"]{
+      opacity: 1;
+    }
+
+    // --------------------------------------
+    // Modal Backdrop（オーバーレイ）
+    // --------------------------------------
+    &::backdrop {
+      backdrop-filter: blur(4px);
+      background-color: rgba(#000, 0.7);
+      cursor: pointer;
+    }
+
+
+    // --------------------------------------
+    // Modal Content
+    // --------------------------------------
+    .dialog_content{
+      padding: 50px 30px;
+      background-color: #ccc;
+    }
+
+    // --------------------------------------
+    // Modal Close Button
+    // --------------------------------------
+    .dialog_close {
+      // Button size related
+      $btn_with: 50px;
+      $btn_height: 50px;
+
+      // Button line related
+      $btn_line_width: 60%;
+      $btn_line_height: 2px;
+
+      // Button color related
+      $btn_color: transparent;
+      $btn_line_color: #716e77;
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      overflow: hidden;
+      background-color: $btn_color;
+      width: $btn_with;
+      padding: math.div($btn_height, 2) 0;
+      cursor: pointer;
+
+
+      &::before,
+      &::after{
+        content: "";
+        display: block;
+        position: absolute;
+        right: 0;
+        left: 0;
+        margin-right: auto;
+        margin-left: auto;
+        background-color: $btn_line_color;
+        width: $btn_line_width;
+        height: $btn_line_height;
+      }
+
+      &::before {
+        top: calc(50% - (#{$btn_line_height} / 2));
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        bottom: calc(50% - (#{$btn_line_height} / 2));
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}

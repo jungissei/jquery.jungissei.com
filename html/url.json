@@ -5,5 +5,8 @@
   },{
     "category_name" : "Hamburger Menu",
     "category_slug" : "hamburger-menu"
+  },{
+    "category_name" : "Form",
+    "category_slug" : "form"
   }
 ]
