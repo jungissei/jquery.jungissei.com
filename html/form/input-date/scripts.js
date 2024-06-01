@@ -18,6 +18,7 @@ $(function () {
 
   $area_form.validate({
     groups: get_validate_params_groups(valid_group_rules),
+    errorElement: 'span',
     errorPlacement: function ($error, $element) {
 
       $error
