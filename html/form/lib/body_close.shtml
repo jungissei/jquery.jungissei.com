@@ -1,0 +1,9 @@
+<!-- jquery-validation Start -->
+<script defer src="/lib/js/jquery-validation/jquery.validate.js"></script>
+<script defer src="/lib/js/jquery-validation/additional-methods.js"></script>
+<script defer src="/lib/js/jquery-validation/messages_ja.js"></script>
+<!-- jquery-validation End -->
+
+<!-- モーダル ここから -->
+<script defer src="/form/lib/form.js"></script>
+<!-- モーダル ここまで -->
