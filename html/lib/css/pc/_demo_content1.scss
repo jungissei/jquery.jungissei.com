@@ -3,6 +3,11 @@
 @use "./../mixin" as *;
 
 @include mq($device){
+
+  #demo_content1{
+    margin-top: 45px;
+  }
+
   .block_content1_layout{
     margin-bottom: 50px;
   }
@@ -11,6 +16,10 @@
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
+
+    &:first-child{
+      margin-top: 45px;
+    }
 
     &.block_revers {
       flex-direction: row-reverse;

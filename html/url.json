@@ -8,5 +8,8 @@
   },{
     "category_name" : "Form",
     "category_slug" : "form"
+  },{
+    "category_name" : "Global Menu",
+    "category_slug" : "global-menu"
   }
 ]
