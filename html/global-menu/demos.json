@@ -1,0 +1,37 @@
+[
+  {
+    "demo_name": "基本形式",
+    "demo_slug": "basic",
+    "demo_description": "基本形式のグローバルメニュー"
+  },
+  {
+    "demo_name": "ロゴ付き",
+    "demo_slug": "with-logo",
+    "demo_description": "ロゴ付きのグローバルメニュー"
+  },
+  {
+    "demo_name": "アコーディオンメニュー",
+    "demo_slug": "accordion-menu",
+    "demo_description": "アコーディオンメニューのグローバルメニュー"
+  },
+  {
+    "demo_name": "メガメニュー",
+    "demo_slug": "mega-menu",
+    "demo_description": "メガメニューのグローバルメニュー"
+  },
+  {
+    "demo_name": "特定要素を過ぎたら追従",
+    "demo_slug": "sticky",
+    "demo_description": "特定要素を過ぎたら追従形式のグローバルメニュー"
+  },
+  {
+    "demo_name": "上にスクロールしたら追従",
+    "demo_slug": "sticky-top",
+    "demo_description": "上にスクロールしたら追従形式のグローバルメニュー"
+  },
+  {
+    "demo_name": "デフォルト追従形式",
+    "demo_slug": "default-sticky",
+    "demo_description": "デフォルト追従形式のグローバルメニュー"
+  }
+]

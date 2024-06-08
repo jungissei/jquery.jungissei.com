@@ -1,0 +1,43 @@
+@use "sass:math";
+@use "../../lib/css/pc/setting" as *;
+@use "../../lib/css/mixin" as *;
+
+
+
+@include mq($device){
+  //----------------------------------------------------------------------
+  // Global menu
+  //----------------------------------------------------------------------
+  //--------------------------------------
+  // Base
+  //--------------------------------------
+  #template_header{
+    .layout_inner{
+      position: relative;
+      background-color: #ccc;
+    }
+  }
+
+  #header_nav{
+
+    .nav_items{
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+
+      >.nav_item {
+        flex: 1 1 auto;
+
+        >.item_name{
+          display: block;
+          text-align: center;
+          padding: 15px 0;
+        }
+
+        &:not(:last-child){
+          border-right: solid 1px #fff;
+        }
+      }
+    }
+  }
+}

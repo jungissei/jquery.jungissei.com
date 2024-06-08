@@ -3,6 +3,11 @@
 @use "./../mixin" as *;
 
 @include mq($device){
+
+  #demo_content1{
+    margin-top: 45px;
+  }
+
   .block_content1_layout{
     margin-bottom: 50px;
   }
