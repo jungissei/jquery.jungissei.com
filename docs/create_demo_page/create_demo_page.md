@@ -14,3 +14,7 @@ mkdir -p $DEST_DIR && cp -r docs/create_demo_page/demo/* $DEST_DIR
 
 <!--#include virtual="/{demo_category}/lib/head_close.shtml" -->
 <!--#include virtual="/{demo_category}/lib/body_close.shtml" -->
+
+
+コミットする
+デモページテンプレート追加 #0000
