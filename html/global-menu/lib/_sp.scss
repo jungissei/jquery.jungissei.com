@@ -4,5 +4,7 @@
 
 
 @include mq($device){
-
+  #template_header{
+    display: none;
+  }
 }

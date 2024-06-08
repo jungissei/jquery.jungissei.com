@@ -1,0 +1,27 @@
+@use "sass:math";
+@use "../../lib/css/pc/setting" as *;
+@use "../../lib/css/mixin" as *;
+
+
+@include mq($device){
+
+  #template_header{
+    .header_content{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .header_logo{
+        font-size: 20px;
+        font-weight: bold;
+
+        +#header_nav{
+          margin-left: auto;
+          width: calc(100% - 75px);
+        }
+      }
+    }
+  }
+
+
+}
