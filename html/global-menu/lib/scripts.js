@@ -8,7 +8,7 @@ $(function(){
 
   // 設定変数
   let $submenu_item = $('#header_nav [data-submenu]'); // グローバルメニューアイテム
-  let $submenu_item_button = $submenu_item.find('button'); // グローバルメニューアイテム ボタン要素
+  let $submenu_item_button = $submenu_item.find('button.item_name'); // グローバルメニューアイテム ボタン要素
   let show_class = 'is_show'; // 表示切替クラス
 
 
