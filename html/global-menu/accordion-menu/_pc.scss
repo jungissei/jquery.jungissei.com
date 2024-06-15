@@ -1,7 +1,70 @@
-// @use "sass:math";
-// @use "../../lib/css/pc/setting" as *;
-// @use "../../lib/css/mixin" as *;
+@use "sass:math";
+@use "../../lib/css/pc/setting" as *;
+@use "../../lib/css/mixin" as *;
 
 
-// @include mq($device){
-// }
+@include mq($device){
+  //----------------------------------------------------------------------
+  // Global menu
+  //----------------------------------------------------------------------
+  //--------------------------------------
+  // Accordion Menu
+  //--------------------------------------
+  #header_nav{
+    .nav_items{
+      >.nav_item{
+
+        &[data-submenu="accordion-menu"]{
+          position: relative;
+          z-index: 1;
+
+          .submenu_body {
+            position: absolute;
+            top: 100%;
+            width: 220px;
+            z-index: 1;
+            opacity: 0;
+            visibility: hidden;
+            background-color: #ccc;
+            box-shadow: 0 4px 5px rgba(0, 0, 0, 0.26);
+            transform: translate(0, -10px);
+            transition: opacity 0.2s, visibility 0.2s, transform 0.2s;
+
+            li {
+              a {
+                display: block;
+                padding: 10px;
+                background-color: #ccc;
+                transition: background-color 0.2s;
+
+                &:hover {
+                  background-color: rgba(#ccc, 0.8);
+                }
+              }
+
+              &:not(:last-child) {
+                a {
+                  border-bottom: 1px dotted #fff;
+                }
+              }
+            }
+          }
+
+          &:last-child {
+            .submenu_body {
+              right: 0;
+            }
+          }
+
+          &.is_show {
+            .submenu_body {
+              opacity: 1;
+              visibility: visible;
+              transform: translate(0, 0);
+            }
+          }
+        }
+      }
+    }
+  }
+}
