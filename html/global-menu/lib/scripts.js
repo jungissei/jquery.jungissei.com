@@ -25,7 +25,7 @@ $(function(){
     event.preventDefault();
 
     // クリックしたアイテム以外のアイテムを非表示する
-    $submenu_item_button.not(event.target).closest('[data-submenu]').removeClass(show_class);
+    $submenu_item_button.not(event.currentTarget).closest('[data-submenu]').removeClass(show_class);
 
     // クリックしたアイテムを表示切替
     $(this).closest('[data-submenu]').toggleClass(show_class);
@@ -60,5 +60,13 @@ $(function(){
     $submenu_item.each(function(){
       $(this).removeClass(show_class);
     });
+  });
+
+  $(window).on('keyup', function(event){
+    if(event.key == 'Escape'){
+      $submenu_item.each(function(){
+        $(this).removeClass(show_class);
+      });
+    }
   });
 });
