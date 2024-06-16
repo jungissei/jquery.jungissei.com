@@ -1,0 +1,52 @@
+@use "sass:math";
+@use "../../lib/css/pc/setting" as *;
+@use "../../lib/css/mixin" as *;
+
+
+@include mq($device){
+  //----------------------------------------------------------------------
+  // デモ用スタイル
+  //----------------------------------------------------------------------
+  .demo_common_txt1{
+    margin-top: 25px;
+  }
+
+  //----------------------------------------------------------------------
+  // Global menu
+  //----------------------------------------------------------------------
+  //--------------------------------------
+  // Mega Menu
+  //--------------------------------------
+  #header_nav{
+    .nav_items{
+      >.nav_item{
+        &[data-submenu="mega-menu"]{
+          .submenu_body {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            z-index: 1;
+            opacity: 0;
+            visibility: hidden;
+            background-color: #ccc;
+            box-shadow: 0 4px 5px rgba(0, 0, 0, 0.26);
+            padding: 1em 0;
+            transform: scale(0.9) perspective(1000);
+            transform-origin: top center;
+            transition-duration: 0.2s;
+            transition: opacity 0.2s, visibility 0.2s;
+          }
+
+          &.is_show {
+            .submenu_body {
+              opacity: 1;
+              visibility: visible;
+              transform: translateY(0);
+            }
+          }
+        }
+      }
+    }
+  }
+}
