@@ -16,6 +16,10 @@
       }
     }
 
+    >.layout_inner{
+      will-change: animation;
+    }
+
     // ヘッダー固定クラス
     &.is_fixed{
 
