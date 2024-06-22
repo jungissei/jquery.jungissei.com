@@ -1,7 +1,22 @@
-// @use "sass:math";
-// @use "../../lib/css/pc/setting" as *;
-// @use "../../lib/css/mixin" as *;
+@use "sass:math";
+@use "../../lib/css/pc/setting" as *;
+@use "../../lib/css/mixin" as *;
 
 
-// @include mq($device){
-// }
+@include mq($device){
+
+  #template_header{
+
+    &.is_fixed{
+      height: 49px;
+
+      >.layout_inner{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+      }
+    }
+  }
+}
