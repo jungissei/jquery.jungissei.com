@@ -1,7 +1,42 @@
-// @use "sass:math";
-// @use "../../lib/css/pc/setting" as *;
-// @use "../../lib/css/mixin" as *;
+@use "sass:math";
+@use "../../lib/css/pc/setting" as *;
+@use "../../lib/css/mixin" as *;
+
+@include mq($device){
 
 
-// @include mq($device){
-// }
+  #template_header{
+
+    @keyframes fixed_animation{
+      0% {
+        transform: translateY(-100%);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+    @keyframes fixed_animation_hide{
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(-100%);
+      }
+    }
+
+    &.is_fixed{
+      height: 49px;
+
+      >.layout_inner{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+        box-shadow: 0 4px 5px rgba(0, 0, 0, 0.26);
+        animation: fixed_animation 0.2s ease-out 0s 1 normal forwards running;
+        min-width: 1280px; // 横スクロール対応
+      }
+    }
+  }
+}
