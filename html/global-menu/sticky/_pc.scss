@@ -4,9 +4,9 @@
 
 @include mq($device){
 
-
   #template_header{
 
+    // ヘッダー 固定アニメーション
     @keyframes fixed_animation{
       0% {
         transform: translateY(-100%);
@@ -24,6 +24,7 @@
       }
     }
 
+    // ヘッダー固定クラス
     &.is_fixed{
       height: 49px;
 
