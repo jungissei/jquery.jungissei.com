@@ -18,3 +18,7 @@ mkdir -p $DEST_DIR && cp -r docs/create_demo_page/demo/* $DEST_DIR
 
 コミットする
 デモページテンプレート追加 #0000
+
+## デモページ作ったあとは
+- デモページ実装
+- READMEに実装手順、メモ、テスト項目記載
