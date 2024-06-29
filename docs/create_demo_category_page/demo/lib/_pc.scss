@@ -1,0 +1,9 @@
+@use "sass:math";
+@use "../../lib/css/pc/setting" as *;
+@use "../../lib/css/mixin" as *;
+
+
+
+@include mq($device){
+
+}
