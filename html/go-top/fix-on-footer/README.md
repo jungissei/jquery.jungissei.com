@@ -1,6 +1,6 @@
-# TOPへ戻るボタン 基本形
+# デモカテゴリ名 デモページ名
 
-https://jquery.jungissei.com/go-top/basic
+https://jquery.jungissei.com/go-top/fix-on-footer
 
 ## テスト
 - [ ] HTMLに<body tabindex="-1">が設定されていることを確認
@@ -10,6 +10,7 @@ https://jquery.jungissei.com/go-top/basic
 - [ ] ページ読み込み時、ボタンが非表示になっていることを確認
 - [ ] ヘッダーの下までスクロールした時、ボタンが表示されることを確認
 - [ ] ボタンが表示された時、is_fixedクラスが追加されていることを確認
+- [ ] フッターの上までスクロールした時、ボタンがフッター上に固定されることを確認
 - [ ] ページトップに戻った時、ボタンが非表示になることを確認
 
 ## スムーズスクロール機能
