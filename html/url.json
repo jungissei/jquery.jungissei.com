@@ -11,5 +11,8 @@
   },{
     "category_name" : "Global Menu",
     "category_slug" : "global-menu"
+  },{
+    "category_name" : "Go Top",
+    "category_slug" : "go-top"
   }
 ]

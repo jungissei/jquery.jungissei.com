@@ -1,0 +1,25 @@
+@use "sass:math";
+@use "../../lib/css/sp/setting" as *;
+@use "../../lib/css/mixin" as *;
+
+
+@include mq($device){
+  footer{
+    position: relative;
+  }
+
+
+  // --------------------------------------
+  // TOPへ戻るボタン
+  // --------------------------------------
+  #go_top{
+    &.is_absolute {
+      opacity: 1;
+      pointer-events: auto;
+      position: absolute;
+      bottom: auto;
+      top: 0;
+      transform: translateY(-50%);
+    }
+  }
+}
