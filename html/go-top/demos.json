@@ -3,5 +3,10 @@
     "demo_name" : "基本形",
     "demo_slug" : "basic",
     "demo_description" : "TOPへ戻るボタンの基本形です。"
+  },
+  {
+    "demo_name" : "フッターに固定",
+    "demo_slug" : "fix-on-footer",
+    "demo_description" : "ページ下部にスクロールしたらフッター固定する。"
   }
 ]
