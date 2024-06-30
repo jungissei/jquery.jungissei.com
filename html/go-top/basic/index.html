@@ -10,7 +10,6 @@
   </head>
   <body class="pc_solid" tabindex="-1">
     <!--#include virtual="/lib/inc/body_begin.shtml" -->
-    <a href="#main" class="site-skip-link">メインコンテンツまでスキップ</a>
 
     <div id="wrapper">
 
@@ -18,7 +17,7 @@
         <p>ヘッダー</p>
       </header>
 
-      <main id="main" tabindex="-1">
+      <main id="main">
 
         <!--#include virtual="/lib/inc/breadcrumb.shtml" -->
 
@@ -44,9 +43,9 @@
 
 
         <!--ページトップへ戻る ここから-->
-        <button id="go_top" aria-label="ページトップへ戻る">
+        <a href="#top" id="go_top" aria-label="ページトップへ戻る" data-smooth-scroll="false">
           <img src="../lib/arrow.svg" alt width="236" height="150">
-        </button>
+        </a>
         <!--ページトップへ戻る ここまで-->
       </footer>
 

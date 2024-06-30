@@ -16,8 +16,14 @@ $(function() {
   // TOPに移動
   // --------------------------------------
   $go_top_button.on('click', function(event) {
+
     $.smoothScroll({
       scrollTo: 'body',
+      beforeScroll: function () {
+
+        $go_top_button.trigger('smooth_scroll.before');
+
+      },
       afterScroll: function() {
 
         $('body').focus();

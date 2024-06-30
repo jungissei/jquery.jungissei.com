@@ -6,45 +6,11 @@
 
 @include mq($device){
   // --------------------------------------
-  // ページの一番最初のフォーカス可能な要素にoutlineを表示させない
+  // tabindex='-1'の要素にoutlineを表示させない
   // --------------------------------------
   [tabindex='-1']:focus-visible {
     outline: none !important;
   }
-
-  // --------------------------------------
-  // TOPへ戻るボタン
-  // --------------------------------------
-  .site-skip-link{
-    position: fixed;
-    top: 15px;
-    left: 15px;
-    z-index: 1;
-    display: inline grid;
-    grid-template-columns: minmax(0, 1fr) max-content;
-    column-gap: 1em;
-    align-items: center;
-    overflow: clip;
-    padding-block: 1em;
-    padding-inline: 2em;
-    box-shadow: 0 4px 12px #4b658466;
-    background-color: #000;
-    color: #fff;
-    white-space: nowrap;
-    pointer-events: auto;
-    opacity: 1;
-    inline-size: 1;
-    block-size: 1;
-
-
-    &:not(:focus-visible){
-      pointer-events: none;
-      opacity: 0;
-      inline-size: 4px;
-      block-size: 4px;
-    }
-  }
-
 
   // --------------------------------------
   // TOPへ戻るボタン
