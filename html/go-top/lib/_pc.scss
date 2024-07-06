@@ -1,0 +1,68 @@
+@use "sass:math";
+@use "../../lib/css/pc/setting" as *;
+@use "../../lib/css/mixin" as *;
+
+
+
+@include mq($device){
+  // --------------------------------------
+  // tabindex='-1'の要素にoutlineを表示させない
+  // --------------------------------------
+  [tabindex='-1']:focus-visible {
+    outline: none !important;
+  }
+
+  // --------------------------------------
+  // TOPへ戻るボタン
+  // --------------------------------------
+  #go_top{
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    display: block;
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background-color: #000;
+    transition: opacity 0.2s, background-color 0.2s;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+
+    img{
+      width: 20px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    @include hover{
+      background-color: rgba(#000, 0.7);
+    }
+
+    &:focus,
+    &.is_fixed {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+
+
+  // --------------------------------------
+  // デモ専用スタイル
+  // --------------------------------------
+  header,
+  footer{
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #eee;
+
+    p{
+      font-size: 30px;
+      font-weight: bold;
+    }
+  }
+}
