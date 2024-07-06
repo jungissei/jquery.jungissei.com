@@ -18,7 +18,7 @@
   #go_top{
     position: absolute;
     opacity: 0;
-    visibility: hidden;
+    pointer-events: none;
     display: block;
     position: relative;
     width: 50px;
@@ -41,9 +41,10 @@
       background-color: rgba(#000, 0.7);
     }
 
+    &:focus,
     &.is_fixed {
       opacity: 1;
-      visibility: visible;
+      pointer-events: auto;
     }
   }
 
