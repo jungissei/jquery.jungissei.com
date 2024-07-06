@@ -1,53 +1,118 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <!--#include virtual="/lib/inc/head_begin.shtml" -->
-    <meta charset="UTF-8">
-    <title>Tab | 基本形 | jQuery UI LIST / Jung Issei</title>
-    <!--#include virtual="/lib/inc/head_close.shtml" -->
-    <!--#include virtual="/tab/lib/head_close.shtml" -->
-    <link rel="stylesheet" href="./style.css">
 
-  </head>
-  <body class="pc_solid">
-    <!--#include virtual="/lib/inc/body_begin.shtml" -->
+<head>
+  <!--#include virtual="/lib/inc/head_begin.shtml" -->
+  <meta charset="UTF-8">
+  <title>Tab | 基本形 | jQuery UI LIST / Jung Issei</title>
+  <!--#include virtual="/lib/inc/head_close.shtml" -->
+  <!--#include virtual="/tab/lib/head_close.shtml" -->
 
-    <div id="wrapper">
+</head>
 
-      <header>
+<body class="pc_solid">
+  <!--#include virtual="/lib/inc/body_begin.shtml" -->
 
-      </header>
+  <div id="wrapper">
 
-      <main>
+    <header>
 
-        <!--#include virtual="/lib/inc/breadcrumb.shtml" -->
+    </header>
 
-        <div id="demo_layout" class="page_layout layout1">
-          <div class="layout_inner">
-            <div class="layout_container">
-              <div class="layout_width">
+    <main>
 
-                <!--#include virtual="/lib/inc/demo_name.shtml" -->
+      <!--#include virtual="/lib/inc/breadcrumb.shtml" -->
+
+      <div id="demo_layout" class="page_layout layout1">
+        <div class="layout_inner">
+          <div class="layout_container">
+            <div class="layout_width">
+
+              <!--#include virtual="/lib/inc/demo_name.shtml" -->
+
+
+              <!-- タブ ボタン ここから -->
+              <div class="tab_wrapper" data-tab>
+
+                <!-- タブ ボタン ここから -->
+                <ul class="tab_list" role="tablist">
+                  <li><a role="tab" id="tab_button_dog" href="#tab_panel_dog" aria-controls="tab_panel_dog">犬の種類</a></li>
+                  <li><a role="tab" id="tab_button_cat" href="#tab_panel_cat" aria-controls="tab_panel_cat">猫の種類</a></li>
+                  <li><a role="tab" id="tab_button_bird" href="#tab_panel_bird" aria-controls="tab_panel_bird">鳥の種類</a></li>
+                </ul>
+                <!-- タブ ボタン ここまで -->
+                <!-- タブ パネル ここから -->
+                <div class="tab_panels">
+                  <div class="tab_panel" role="tabpanel" id="tab_panel_dog" aria-labelledby="tab_button_dog" tabindex="0">
+
+                    <ul class="demo_list">
+                      <li>ラブラドール・レトリーバー</li>
+                      <li>ゴールデン・レトリーバー</li>
+                      <li>ジャーマン・シェパード</li>
+                      <li>フレンチ・ブルドッグ</li>
+                      <li>ビーグル</li>
+                      <li>プードル</li>
+                      <li>柴犬</li>
+                      <li>チワワ</li>
+                      <li>ダックスフンド</li>
+                      <li>ボーダー・コリー</li>
+                    </ul>
+
+                  </div>
+                  <div class="tab_panel" role="tabpanel" id="tab_panel_cat" aria-labelledby="tab_button_cat" hidden="until-found">
+
+                    <ul class="demo_list">
+                      <li>アメリカン・ショートヘア</li>
+                      <li>ペルシャ</li>
+                      <li>メインクーン</li>
+                      <li>シャム</li>
+                      <li>ロシアンブルー</li>
+                      <li>スコティッシュフォールド</li>
+                      <li>ブリティッシュ・ショートヘア</li>
+                      <li>ラグドール</li>
+                      <li>ノルウェージャン・フォレストキャット</li>
+                      <li>ベンガル</li>
+                    </ul>
+
+                  </div>
+                  <div class="tab_panel" role="tabpanel" id="tab_panel_bird" aria-labelledby="tab_button_bird" hidden="until-found">
+
+                    <ul class="demo_list">
+                      <li>スズメ</li>
+                      <li>カラス</li>
+                      <li>ハト</li>
+                      <li>オウム</li>
+                      <li>ワシ</li>
+                      <li>フクロウ</li>
+                      <li>カナリア</li>
+                      <li>ペンギン</li>
+                      <li>ツバメ</li>
+                      <li>インコ</li>
+                    </ul>
+
+                  </div>
+                </div>
+                <!-- タブ パネル ここまで -->
 
               </div>
+
+
             </div>
           </div>
         </div>
+      </div>
 
 
-        <!-- テンプレートデモコンテンツ1 -->
-        <!--#include virtual="/lib/inc/demo_content1.shtml" -->
+    </main>
+    <footer>
 
-      </main>
-      <footer>
+    </footer>
 
-      </footer>
+  </div>
 
-    </div>
+  <!--#include virtual="/lib/inc/body_close.shtml" -->
+  <!--#include virtual="/tab/lib/body_close.shtml" -->
 
-    <!--#include virtual="/lib/inc/body_close.shtml" -->
-    <!--#include virtual="/tab/lib/body_close.shtml" -->
-    <script src="./scripts.js"></script>
+</body>
 
-  </body>
 </html>

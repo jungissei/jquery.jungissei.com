@@ -1,8 +1,70 @@
-// @use "sass:math";
-// @use "../../lib/css/sp/setting" as *;
-// @use "../../lib/css/mixin" as *;
+@use "sass:math";
+@use "../../lib/css/sp/setting" as *;
+@use "../../lib/css/mixin" as *;
 
 
-// @include mq($device){
+@include mq($device){
 
-// }
+  // --------------------------------------
+  // デモ用スタイル
+  // --------------------------------------
+  .demo_list {
+
+    li {
+      margin-left: 25px;
+      list-style: disc;
+    }
+  }
+
+
+  // --------------------------------------
+  // Tab
+  // --------------------------------------
+  .tab_wrapper {
+    max-width: 600px;
+
+    .tab_list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      width: 100%;
+
+      li {
+
+        a{
+          display: block;
+          padding: 10px 15px;
+          border-top: 1px solid #000;
+          border-right: 1px solid #000;
+          border-left: 1px solid #000;
+          color: #fff;
+          background-color: #000;
+
+          &[aria-selected="true"] {
+            background-color: #fff;
+            color: #000;
+          }
+        }
+      }
+    }
+
+    .tab_panels {
+      border: 1px solid #000;
+      background-color: #fff;
+      padding: 15px;
+
+      [role='tabpanel']{
+        opacity: 1;
+        transition: opacity 0.2s;
+
+        &[hidden="until-found"]{
+          opacity: 0;
+        }
+
+        &:target {
+          display: revert; // プロパティの値を元に戻す
+        }
+      }
+    }
+  }
+}
