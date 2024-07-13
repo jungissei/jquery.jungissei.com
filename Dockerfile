@@ -1,3 +1,6 @@
-FROM httpd:2.4.58
+FROM php:8.3.9-apache
 
-COPY httpd.conf /usr/local/apache2/conf/httpd.conf
+COPY apache2.conf /etc/apache2/apache2.conf
+
+RUN a2enmod include && \
+    a2enmod cgi
