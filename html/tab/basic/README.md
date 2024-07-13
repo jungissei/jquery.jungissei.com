@@ -8,7 +8,6 @@ https://jquery.jungissei.com/tab/basic
 - [ ] デフォルトで最初のタブ（`firstView: 1`）が選択されている
 
 ### 属性設定テスト
-- [ ] 各タブに正しい `aria-selected`、`aria-controls`、`tabindex` 属性が設定されている
 - [ ] アクティブなタブに `aria-selected="true"` と `tabindex="0"` が設定されている
 - [ ] 非アクティブなタブパネルに `hidden="until-found"` が正確に設定されている（`hidden="hidden"` ではない）
 
@@ -17,7 +16,8 @@ https://jquery.jungissei.com/tab/basic
 - [ ] タブをクリックしたときに正しくアクティブになる
 - [ ] アクティブなタブに対応するタブパネルが表示され、他のパネルが非表示になる
 
-### キーボードナビゲーションテスト
+### アクセシビリティ
+- [ ] `li`要素に`role="presentation"`が付与されているか（`role="tablist"`と`role="tab"`は親子関係である必要がある。`ul`要素で実装する場合はこの制約により、`li`要素を「無いもの」として扱う必要があるため`role="presentation"`を付与）
 - [ ] 左右矢印キーで水平タブを正しく移動できる
 - [ ] Home キーで最初のタブに移動できる
 - [ ] End キーで最後のタブに移動できる
