@@ -7,6 +7,6 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - ./httpd.conf:/usr/local/apache2/conf/httpd.conf
-      - ./html:/usr/local/apache2/htdocs
+      - ./apache2.conf:/etc/apache2/apache2.conf
+      - ./html:/var/www/html
     restart: always
