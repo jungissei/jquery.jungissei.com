@@ -22,7 +22,7 @@ mkdir -p $DEST_DIR && cp -r docs/create_demo_category_page/demo/* $DEST_DIR
 ## TOPインデックスページ修正
 
 ### デモカテゴリjsonに追加。
-html/url.json
+`html/url.json`
 ```
 {
   "category_name" : "{demo_category_name}",
@@ -31,7 +31,7 @@ html/url.json
 ```
 
 ### サムネイル画像設置
-html/{demo_category_slug}/thumb.png
+`html/{demo_category_slug}/thumb.png`
 
 
 ### コミット
