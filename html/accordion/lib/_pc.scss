@@ -1,9 +1,111 @@
-// @use "sass:math";
-// @use "../../lib/css/pc/setting" as *;
-// @use "../../lib/css/mixin" as *;
+@use "sass:math";
+@use "../../lib/css/pc/setting" as *;
+@use "../../lib/css/mixin" as *;
 
 
 
-// @include mq($device){
+@include mq($device){
 
-// }
+  // --------------------------------------
+  // デモ専用スタイル
+  // --------------------------------------
+  #demo_layout{
+    .layout_width{
+      max-width: 560px;
+      width: calc(100% - 30px);
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+
+  // --------------------------------------
+  // アコーディオン
+  // --------------------------------------
+  .accordion_wrap{
+
+    .accordion_item {
+
+      &:not(:last-child){
+        border-bottom: 1px solid #000;
+      }
+
+      .accordion_summary {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 10px;
+        padding: 15px 10px 15px 15px;
+        line-height: 1.34;
+        cursor: pointer;
+
+        &::-webkit-details-marker {
+          display: none;
+        }
+      }
+
+      .accordion_panel{
+        padding: 0 15px 15px 15px;
+        overflow: hidden;
+        transition: block-size 0.3s; // <= 開閉時アニメーション必須設定
+      }
+    }
+  }
+
+  // --------------------------------------
+  // アコーディオン プラス・マイナスアイコン
+  // --------------------------------------
+  .accordion_wrap{
+    .accordion_item {
+
+      &.item_plus_minus{
+
+        @keyframes open-animation {
+          from {
+            transform: rotate(0deg);
+          }
+
+          to{
+            transform: rotate(270deg);
+          }
+        }
+
+        @keyframes close-animation {
+          from {
+            transform: rotate(270deg);
+          }
+
+          to {
+            transform: rotate(0deg);
+          }
+        }
+
+
+        .accordion_summary{
+          transform-style: preserve-3d;
+
+          .summary_icon{
+            position: relative;
+            display: inline-block;
+            inline-size: 1em;
+            aspect-ratio: 1;
+
+            &::before,
+            &::after {
+              position: absolute;
+              inset: 0;
+              inline-size: 100%;
+              block-size: 2px;
+              margin: auto;
+              content: "";
+              background-color: #000;
+            }
+
+
+            &:where(.accordion_item[open] *)::after {
+              animation: 0.3s open-animation forwards;
+            }
+          }
+        }
+      }
+    }
+  }
+}

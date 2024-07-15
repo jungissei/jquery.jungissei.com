@@ -1,67 +1,113 @@
 (function ($) {
-  function Accordion(element, options) {
-    this.element = element;
-    this.settings = $.extend({
-      openClass: 'is_open',
-      openOnly1: false,
-      speed: 200
-    }, options);
+  /**
+   * アコーディオン機能を初期化するコンストラクタ
+   * @param {HTMLElement} element アコーディオンを適用するDOM要素
+   */
+  function Accordion(element) {
+    this.element = element; // アコーディオンの基となる要素を設定
+    this.isTransitioning = false; // トランジション中かどうかの状態
+
+    // 初期化メソッドを呼び出し
     this.init();
   }
 
   Accordion.prototype = {
+    /**
+     * 初期化
+     */
     init: function () {
-      let $accordion = $(this.element);
-      let settings = this.settings;
+      const accordion = this.element;
+      const detailsElements = $(accordion).find("details");
 
-      // Event listener for accordion trigger click
-      $accordion.find('[data-accordion="trigger"]').on('click', function () {
-        let $clicked_accordion_item = $(this).closest('[data-accordion="item"]');
-        Accordion.prototype.accordion_toggle($clicked_accordion_item, settings.openClass, settings.speed);
-        if (settings.openOnly1) {
-          Accordion.prototype.open_only_1($clicked_accordion_item, settings.openClass, settings.speed);
-        }
-      });
+      // 各details要素にイベントリスナーを追加
+      detailsElements.each(function (index, details) {
+        const summary = $(details).find("summary")[0];
+        const panel = $(details).find("summary + *")[0];
 
-      // Event listener for open only one accordion item
-      if (settings.openOnly1) {
-        $accordion.find('[data-accordion="item"]').on('before.accordion_open', function () {
-          Accordion.prototype.open_only_1($(this), settings.openClass, settings.speed);
-        });
-      }
+        if (!(details && summary && panel)) return; // 必要要素が揃ってない場合は処理をやめる
+
+        $(summary).on("click", function (event) {
+          event.preventDefault();
+          if (details.open) {
+            this.onClose(details, panel);
+          } else {
+            this.onOpen(details, panel);
+          }
+        }.bind(this));
+      }.bind(this));
     },
-    accordion_toggle: function ($clicked_accordion_item, open_class, speed) {
-      if ($clicked_accordion_item.hasClass(open_class)) {
-        // Close accordion item
-        $clicked_accordion_item.trigger('before.accordion_close');
-        $clicked_accordion_item.find('[data-accordion="trigger"]').attr('aria-expanded', false);
-        $clicked_accordion_item.removeClass(open_class).find('[data-accordion="panel"]').slideUp(speed);
-        $clicked_accordion_item.trigger('after.accordion_close');
-      } else {
-        // Open accordion item
-        $clicked_accordion_item.trigger('before.accordion_open');
-        $clicked_accordion_item.find('[data-accordion="trigger"]').attr('aria-expanded', true);
-        $clicked_accordion_item.addClass(open_class).find('[data-accordion="panel"]').slideDown(speed);
-        $clicked_accordion_item.trigger('after.accordion_open');
-      }
-    },
-    open_only_1: function ($event_accordion_item, open_class, speed) {
-      let $accordion = $event_accordion_item.closest('[data-accordion-type="open_only_1"]');
-      if ($accordion.length === 0) {
+
+    /**
+     * アコーディオンを開く処理
+     * @param {HTMLElement} details 開くdetails要素
+     * @param {HTMLElement} panel 開くパネル要素
+     */
+    onOpen: function (details, panel) {
+      if (details.open || this.isTransitioning) {
         return;
       }
-      let $accordion_items = $accordion.find('[data-accordion="item"]');
-      $accordion_items.each(function () {
-        if (!$(this).is($event_accordion_item) && $(this).hasClass(open_class)) {
-          $(this).removeClass(open_class).find('[data-accordion="panel"]').slideUp(speed);
-        }
+
+      this.isTransitioning = true;
+      details.setAttribute('open', '');
+      panel.style.blockSize = '0px';
+
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          panel.style.blockSize = panel.scrollHeight + 'px';
+        });
       });
+
+      panel.addEventListener('transitionend', function () {
+        panel.style.blockSize = '';
+        this.isTransitioning = false;
+      }.bind(this), { once: true });
+    },
+
+    /**
+     * アコーディオンを閉じる処理
+     * @param {HTMLElement} details 閉じるdetails要素
+     * @param {HTMLElement} panel 閉じるパネル要素
+     */
+    onClose: function (details, panel) {
+      if (!details.open || this.isTransitioning) {
+        return;
+      }
+
+      this.isTransitioning = true;
+      panel.style.blockSize = panel.scrollHeight + 'px';
+
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          panel.style.blockSize = '0';
+        });
+      });
+
+      panel.addEventListener('transitionend', function () {
+        details.removeAttribute('open');
+        panel.style.blockSize = '';
+        this.isTransitioning = false;
+      }.bind(this), { once: true });
     }
   };
 
-  $.fn.accordion = function (options) {
+  /**
+   * jQueryプラグインとしてアコーディオン機能を初期化します。
+   */
+  $.fn.accordion = function () {
     return this.each(function () {
-      new Accordion(this, options);
+      let accordion = $(this).data("accordion");
+
+      if (!accordion) {
+        accordion = new Accordion(this);
+        $(this).data("accordion", accordion);
+      }
     });
   };
-}(jQuery));
+
+  /**
+   * data-accordion属性を持つ要素に対してアコーディオン機能を適用します。
+   */
+  $("[data-accordion]").each(function () {
+    $(this).accordion();
+  });
+})(jQuery);
