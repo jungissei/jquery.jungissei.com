@@ -58,34 +58,13 @@
 
       &.item_plus_minus{
 
-        @keyframes open-animation {
-          from {
-            transform: rotate(0deg);
-          }
-
-          to{
-            transform: rotate(270deg);
-          }
-        }
-
-        @keyframes close-animation {
-          from {
-            transform: rotate(270deg);
-          }
-
-          to {
-            transform: rotate(0deg);
-          }
-        }
-
-
         .accordion_summary{
           transform-style: preserve-3d;
 
           .summary_icon{
             position: relative;
             display: inline-block;
-            inline-size: 1em;
+            inline-size: 16px;
             aspect-ratio: 1;
 
             &::before,
@@ -99,9 +78,24 @@
               background-color: #000;
             }
 
+            &::before{
+              transform: rotate(90deg);
+              animation: 0.3s accordion-icon-plus-minus-close-before;
+            }
 
-            &:where(.accordion_item[open] *)::after {
-              animation: 0.3s open-animation forwards;
+            &::after{
+              transform: rotate(180deg);
+              animation: 0.3s accordion-icon-plus-minus-close-after;
+            }
+
+            &:where(.accordion_item[open] *) {
+              &::before{
+                animation: 0.3s accordion-icon-plus-minus-open-before forwards;
+              }
+
+              &::after{
+                animation: 0.3s accordion-icon-plus-minus-open-after forwards;
+              }
             }
           }
         }
