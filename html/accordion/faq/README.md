@@ -1,5 +1,5 @@
-# {demo_page_name} {demo_category_name}
+# FAQ Accordion
 
-https://jquery.jungissei.com/{demo_category_slug}/{demo_page_slug}
+https://jquery.jungissei.com/accordion/faq
 
 ## テスト
