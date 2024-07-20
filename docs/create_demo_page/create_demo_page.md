@@ -1,5 +1,9 @@
 # デモページ作成手順
 
+
+## デモカテゴリページ
+
+### テンプレート複製
 ```bash
 # gitのルートディレクトリに移動
 cd $(git rev-parse --show-toplevel)
@@ -9,16 +13,30 @@ DEST_DIR="html/{demo_category_slug}/{demo_page_slug}"
 mkdir -p $DEST_DIR && cp -r docs/create_demo_page/demo/* $DEST_DIR
 ```
 
-デモページ名とデモカテゴリ名を変更
-<title>デモページ名 | デモカテゴリ名 | jQuery UI LIST / Jung Issei</title>
 
-<!--#include virtual="/{demo_category}/lib/head_close.shtml" -->
-<!--#include virtual="/{demo_category}/lib/body_close.shtml" -->
-
-{demo_page}
-
-コミットする
+### コミット
+```
 デモページテンプレート追加 #0000
+```
+
+
+### 変数置換
+```
+{demo_category_slug}
+{demo_page_slug}
+{demo_page_name}
+{demo_category_name}
+```
+
+### デモページjsonに追加。
+`{demo_category_slug}/demos.json`
+
+
+### コミット
+```
+デモページテンプレート追加 #0000
+```
+
 
 ## デモページ作ったあとは
 - デモページ実装

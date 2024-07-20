@@ -1,4 +1,4 @@
-# {デモカテゴリ名}
+# {demo_category_name}
 
 ## 概要
-{デモカテゴリ名}のデモページです。
+{demo_category_name}のデモページです。

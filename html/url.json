@@ -17,5 +17,8 @@
   },{
     "category_name" : "Tab",
     "category_slug" : "tab"
+  },{
+    "category_name" : "Accordion",
+    "category_slug" : "accordion"
   }
 ]

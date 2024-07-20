@@ -2,211 +2,100 @@
 @use "../../lib/css/pc/setting" as *;
 @use "../../lib/css/mixin" as *;
 
+
+
 @include mq($device){
-  // ----------------------------------------------------------------------------
-  // Accordion
-  // ----------------------------------------------------------------------------
-  .block_accordion{
 
-    // --------------------------------------
-    // Base
-    // --------------------------------------
-    max-width: 560px;
-    margin-right: auto;
-    margin-left: auto;
+  // --------------------------------------
+  // デモ専用スタイル
+  // --------------------------------------
+  #demo_layout{
+    .layout_width{
+      max-width: 560px;
+      width: calc(100% - 30px);
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
 
-    > div[class*="_item"]{
+  // --------------------------------------
+  // アコーディオン
+  // --------------------------------------
+  .accordion_wrap{
+
+    .accordion_item {
+
       &:not(:last-child){
         border-bottom: 1px solid #000;
       }
-    }
 
-    > .accordion_item{
+      .accordion_summary {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 10px;
+        padding: 15px 10px 15px 15px;
+        line-height: 1.34;
+        cursor: pointer;
 
-      .item_panel{
+        &::-webkit-details-marker {
+          display: none;
+        }
+      }
+
+      .accordion_panel{
         padding: 0 15px 15px 15px;
-      }
-
-      // --------------------------------------
-      // Plus Minus
-      // --------------------------------------
-      &.accordion_plus_minus{
-        .item_header {
-          display: block;
-          position: relative;
-          cursor: pointer;
-          width: 100%;
-
-          &::before,
-          &::after {
-            display: block;
-            position: absolute;
-            top: calc(50% - 1px);
-            right: 12px;
-            content: "";
-            width: 20px;
-            height: 2px;
-            background-color: #000;
-          }
-
-          &::after {
-            transform: rotate(90deg);
-            transition: all 0.2s;
-          }
-
-          .header_inner {
-            display: block;
-            padding: 15px 45px 15px 15px;
-          }
-        }
-
-        &.is_open {
-          > .item_header {
-            &::after {
-              transform: rotate(0deg);
-            }
-          }
-        }
-      }
-
-      // --------------------------------------
-      // Arrow triangle
-      // --------------------------------------
-      &.accordion_arrow_triangle{
-        .item_header {
-          display: block;
-          position: relative;
-          cursor: pointer;
-          width: 100%;
-
-          &::after {
-            display: block;
-            position: absolute;
-            top: calc(50% - 7px);
-            right: 17px;
-            content: "";
-            transition: all 0.2s;
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 10px 7px 0 7px;
-            border-color: #000 transparent transparent transparent;
-          }
-
-          .header_inner {
-            display: block;
-            padding: 15px 45px 15px 15px;
-          }
-        }
-
-        &.is_open {
-          .item_header {
-            &::after {
-              transform: rotate(180deg);
-            }
-          }
-        }
-      }
-
-      // --------------------------------------
-      // Arrow Bar
-      // --------------------------------------
-      &.accordion_arrow_bar{
-        .item_header {
-          display: block;
-          position: relative;
-          cursor: pointer;
-          width: 100%;
-
-          &::after {
-            display: block;
-            position: absolute;
-            top: calc(50% - 7.5px);
-            right: 18px;
-            content: "";
-            width: 13px;
-            height: 13px;
-            border-right: 2px solid #000;
-            border-bottom: 2px solid #000;
-            transform: rotate(45deg);
-            transition: all 0.2s;
-          }
-
-          .header_inner {
-            display: block;
-            padding: 15px 45px 15px 15px;
-          }
-        }
-
-        &.is_open {
-          .item_header {
-            &::after {
-              transform: rotate(225deg);
-            }
-          }
-        }
+        overflow: hidden;
+        transition: block-size 0.3s; // <= 開閉時アニメーション必須設定
       }
     }
+  }
 
+  // --------------------------------------
+  // アコーディオン プラス・マイナスアイコン
+  // --------------------------------------
+  .accordion_wrap{
+    .accordion_item {
 
-    .link_item{
+      &.item_plus_minus{
 
-      // --------------------------------------
-      // Arrow Bar Right
-      // --------------------------------------
-      &.item_arrow_bar_right{
-        > a.item_anchor {
-          display: block;
-          position: relative;
-          padding: 15px 60px 15px 15px;
+        .accordion_summary{
+          transform-style: preserve-3d;
 
-          &::after {
-            display: block;
-            position: absolute;
-            top: calc(50% - 7.5px);
-            right: 18px;
-            content: "";
-            width: 13px;
-            height: 13px;
-            border-right: 2px solid #333;
-            border-bottom: 2px solid #333;
-            transform: rotate(-45deg);
-            transition: right 0.2s;
-          }
+          .summary_icon{
+            position: relative;
+            display: inline-block;
+            inline-size: 16px;
+            aspect-ratio: 1;
 
-          &:hover {
+            &::before,
             &::after {
-              right: 10px;
+              position: absolute;
+              inset: 0;
+              inline-size: 100%;
+              block-size: 2px;
+              margin: auto;
+              content: "";
+              background-color: #000;
             }
-          }
-        }
-      }
 
-      // --------------------------------------
-      // Arrow Triangle Right
-      // --------------------------------------
-      &.item_arrow_triangle_right{
-        > a.item_anchor {
-          position: relative;
-          padding-right: 60px;
+            &::before{
+              transform: rotate(90deg);
+              animation: 0.3s accordion-icon-plus-minus-close-before;
+            }
 
-          &::after {
-            display: block;
-            position: absolute;
-            top: calc(50% - 7px);
-            right: 18px;
-            content: "";
-            transition: all 0.2s;
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 7px 0 7px 10px;
-            border-color: transparent transparent transparent #333;
-          }
+            &::after{
+              transform: rotate(180deg);
+              animation: 0.3s accordion-icon-plus-minus-close-after;
+            }
 
-          &:hover {
-            &::after {
-              right: 10px;
+            &:where(.accordion_item[open] *) {
+              &::before{
+                animation: 0.3s accordion-icon-plus-minus-open-before forwards;
+              }
+
+              &::after{
+                animation: 0.3s accordion-icon-plus-minus-open-after forwards;
+              }
             }
           }
         }
