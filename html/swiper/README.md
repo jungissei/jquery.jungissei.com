@@ -1,4 +1,4 @@
-# {demo_category_name}
+# Swiper
 
 ## 概要
-{demo_category_name}のデモページです。
+Swiperのデモページです。

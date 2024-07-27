@@ -20,5 +20,8 @@
   },{
     "category_name" : "Accordion",
     "category_slug" : "accordion"
+  },{
+    "category_name" : "Swiper",
+    "category_slug" : "swiper"
   }
 ]
