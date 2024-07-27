@@ -1,7 +1,7 @@
 [
   {
-    "demo_name" : "デモ名",
-    "demo_slug" : "デモスラッグ名",
-    "demo_description" : "デモ説明文"
+    "demo_name" : "基本形",
+    "demo_slug" : "basic",
+    "demo_description" : "Swiperの基本形"
   }
 ]
