@@ -3,5 +3,9 @@
     "demo_name" : "基本形",
     "demo_slug" : "basic",
     "demo_description" : "アコーディオンUIの基本形です。"
+  },{
+    "demo_name" : "FAQ",
+    "demo_slug" : "faq",
+    "demo_description" : "アコーディオンUIのFAQ形です。"
   }
 ]

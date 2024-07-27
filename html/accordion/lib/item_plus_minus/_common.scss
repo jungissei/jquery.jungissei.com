@@ -1,0 +1,68 @@
+// ----------------------------------------------------------------------------
+// アコーディオンアイコン共通変数
+// ----------------------------------------------------------------------------
+.accordion_wrap{
+  .accordion_item {
+    &.item_plus_minus{
+      // サマリー
+      --color-summary-text: #000;
+
+      // アイコン
+      --color-icon: #000;
+      --animation-duration-icon: 0.3s;
+
+      // パネル
+      --color-panel-text: #000;
+      --animation-duration-panel: 0.3s;
+    }
+  }
+}
+
+// ----------------------------------------------------------------------------
+// アコーディオンアイコンのアニメーション
+// ----------------------------------------------------------------------------
+// --------------------------------------
+// アコーディオンアイコンを開くアニメーション
+// --------------------------------------
+@keyframes accordion_item_plus_minus_open_before {
+  from {
+    transform: rotate(90deg);
+  }
+
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes accordion_item_plus_minus_open_after {
+  from {
+    transform: rotate(180deg);
+  }
+
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+// --------------------------------------
+// アコーディオンアイコンを閉じるアニメーション
+// --------------------------------------
+@keyframes accordion_item_plus_minus_close_before {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(90deg);
+  }
+}
+
+@keyframes accordion_item_plus_minus_close_after {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(180deg);
+  }
+}
