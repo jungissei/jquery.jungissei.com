@@ -1,9 +1,48 @@
-// @use "sass:math";
-// @use "../../lib/css/pc/setting" as *;
-// @use "../../lib/css/mixin" as *;
+@use "sass:math";
+@use "../../lib/css/pc/setting" as *;
+@use "../../lib/css/mixin" as *;
 
 
 
-// @include mq($device){
+@include mq($device){
 
-// }
+  // --------------------------------------
+  // Swiper Base
+  // --------------------------------------
+  .swiper-container{
+
+    // ページ読み込み時、スライドアイテムが縦長に表示されるのを防ぐため、
+    // ページ読み込み時にはスライドアイテムを非表示にする
+    &:not(.swiper-initialized){
+      overflow: hidden;
+      opacity: 0;
+    }
+  }
+
+  // --------------------------------------
+  // Swiper Fade
+  // これがないとフェードアニメーションが動かない。
+  // --------------------------------------
+  .swiper-fade {
+    .swiper-free-mode {
+      .swiper-slide {
+        transition-timing-function: ease-out;
+      }
+    }
+    .swiper-slide {
+      pointer-events: none;
+      transition-property: opacity;
+
+      .swiper-slide {
+        pointer-events: none;
+      }
+    }
+    .swiper-slide-active {
+      pointer-events: auto;
+
+      .swiper-slide-active {
+        pointer-events: auto;
+      }
+    }
+  }
+}

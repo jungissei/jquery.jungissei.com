@@ -1,1 +1,4 @@
-<script src="../lib/scripts.js"></script>
+<!-- BEGIN Swiper -->
+<link rel="stylesheet" href="../lib/swiper.css">
+<script src="../lib/swiper-bundle.js"></script>
+<!-- END Swiper -->
