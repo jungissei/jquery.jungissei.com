@@ -3,5 +3,10 @@
     "demo_name" : "基本形",
     "demo_slug" : "basic",
     "demo_description" : "Swiperの基本形"
+  },
+  {
+    "demo_name" : "サムネイルイメージ",
+    "demo_slug" : "paging-thumbnail-image",
+    "demo_description" : "サムネイルイメージを使ったページネーション"
   }
 ]
