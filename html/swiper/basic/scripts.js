@@ -1,6 +1,9 @@
 $(function(){
 
-  let swiper_block     = '.swiper-block';     // スライダー全体を囲む要素
+  // --------------------------------------
+  // 基本設定
+  // --------------------------------------
+  let swiper_block     = '.swiper-block';                          // スライダー全体を囲む要素
   let swiper_container = swiper_block + ' ' + '.swiper-container'; // スライダーアイテムを囲む要素
 
   // スライダーアイテムが存在しない場合は処理を中断
@@ -8,7 +11,9 @@ $(function(){
     return;
   }
 
-
+  // --------------------------------------
+  // 以下処理
+  // --------------------------------------
   let swiper_pagination  = swiper_block + ' ' + '.swiper-pagination';  // ページネーション要素
   let swiper_button_next = swiper_block + ' ' + '.swiper-button-next'; // 次のスライドボタン要素
   let swiper_button_prev = swiper_block + ' ' + '.swiper-button-prev'; // 前のスライドボタン要素
