@@ -14,7 +14,7 @@ $(function(){
   // --------------------------------------
   // 以下処理
   // --------------------------------------
-  let swiper_pagination  = swiper_block + ' ' + '.swiper-pagination';  // ページネーション要素
+  let swiper_pagination  = swiper_block + ' ' + '.swiper-pagination-thumb';  // ページネーション要素
   let swiper_button_next = swiper_block + ' ' + '.swiper-button-next'; // 次のスライドボタン要素
   let swiper_button_prev = swiper_block + ' ' + '.swiper-button-prev'; // 前のスライドボタン要素
 
@@ -39,6 +39,18 @@ $(function(){
       nextSlideMessage: '次のスライドへ',
       slideLabelMessage:'{{index}}枚目のスライド',
       paginationBulletMessage: '{{index}}枚目のスライドを表示'
+    },
+    on: {
+      init: function() {
+        let bullets = $(swiper_pagination + ' .swiper-pagination-bullet');
+        let slides = $(swiper_container + ' .swiper-slide img');
+        bullets.each(function(index, bullet) {
+          if (slides[index]) {
+            let img = $('<img>').attr('src', $(slides[index]).attr('src')).attr('alt', '');
+            $(bullet).append(img);
+          }
+        });
+      }
     }
   });
 });
