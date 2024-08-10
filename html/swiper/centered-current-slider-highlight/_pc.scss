@@ -1,7 +1,101 @@
-// @use "sass:math";
-// @use "../../lib/css/pc/setting" as *;
-// @use "../../lib/css/mixin" as *;
+@use "sass:math";
+@use "../../lib/css/pc/setting" as *;
+@use "../../lib/css/mixin" as *;
 
 
-// @include mq($device){
-// }
+
+@include mq($device){
+  .swiper-block{
+    max-width: 640px;
+    margin-inline: auto;
+    overflow: hidden;
+
+    .swiper-container{
+      position: relative;
+
+      .swiper-wrapper{
+        .swiper-slide{
+          transition: transform 0.2s;
+          transform: scale(0.55);
+
+          &.swiper-slide-prev{
+            transform-origin: 100% 50%;
+          }
+          &.swiper-slide-next{
+            transform-origin: 0 50%;
+          }
+          &.swiper-slide-active{
+            transform-origin: 100% 50%;
+            transform: scale(1);
+          }
+        }
+      }
+    }
+
+    .swiper-button{
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      width: 30px;
+      height: 100%;
+      z-index: 1;
+
+      &::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin-top: auto;
+        margin-bottom: auto;
+        display: block;
+        border-top: 4px solid #fff;
+        border-right: 4px solid #fff;
+        width: 20px;
+        height: 20px;
+      }
+
+      &.swiper-button-prev{
+        left: 0;
+
+        &::before{
+          transform: rotate(-135deg);
+          right: 0;
+        }
+      }
+
+      &.swiper-button-next{
+        right: 0;
+
+        &::before{
+          transform: rotate(45deg);
+          left: 0;
+        }
+      }
+
+
+      // スライドアイテムが最初 or 最後の場合はボタンを非表示する
+      &[aria-disabled="true"]{
+        opacity: 0;
+      }
+    }
+
+    .swiper-pagination{
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 15px;
+
+      .swiper-pagination-bullet{
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #ccc;
+        cursor: pointer;
+
+        &.swiper-pagination-bullet-active{
+          background-color: #000;
+        }
+      }
+    }
+  }
+}
