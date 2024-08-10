@@ -1,5 +1,5 @@
-# {demo_page_name} {demo_category_name}
+# 現在スライドを強調 Swiper
 
-https://jquery.jungissei.com/{demo_category_slug}/{demo_page_slug}
+https://jquery.jungissei.com/swiper/centered-current-slider-highlight
 
 ## テスト
