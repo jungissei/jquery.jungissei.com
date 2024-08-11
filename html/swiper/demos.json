@@ -13,5 +13,10 @@
     "demo_name" : "現在スライドを強調",
     "demo_slug" : "centered-current-slider-highlight",
     "demo_description" : "現在スライドを強調"
+  },
+  {
+    "demo_name" : "Loop枚数対応",
+    "demo_slug" : "loop-cms",
+    "demo_description" : "Loop枚数対応。CMSで枚数が固定でない場合にあらゆる枚数でも欠けずにスライドさせる"
   }
 ]
