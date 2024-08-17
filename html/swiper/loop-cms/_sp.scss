@@ -1,19 +1,43 @@
 @use "sass:math";
-@use "../../lib/css/pc/setting" as *;
+@use "../../lib/css/sp/setting" as *;
 @use "../../lib/css/mixin" as *;
 
 
 
 @include mq($device){
   .swiper-block{
-    max-width: 640px;
-    margin-inline: auto;
     overflow: hidden;
+    margin-top: 15px;
+    margin-bottom: 50px;
 
     .swiper-container{
       position: relative;
 
+
+      // スライドアイテムがコンテナの幅を超えない場合は、スライド無効＆スライドアイテムを非表示
+      &.swiper-container-no-scroll{
+        overflow: visible;
+        opacity: 1;
+
+        .swiper-wrapper{
+          justify-content: center;
+
+          .swiper-slide{
+            // Swiperの設定値を下記に追加
+            // スライドが1枚時、スライド適用時の幅に合わせる。
+            $slidesPerView: 1.2;
+            $spaceBetween: 15px;
+            width: calc((100% - ($spaceBetween * ($slidesPerView - 1))) / $slidesPerView);
+          }
+        }
+
+        .swiper-button{
+          display: none;
+        }
+      }
+
       .swiper-wrapper{
+
         .swiper-slide{
 
         }

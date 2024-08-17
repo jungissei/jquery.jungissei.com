@@ -15,7 +15,19 @@
 
       .swiper-wrapper{
         .swiper-slide{
+          transition: transform 0.2s;
+          transform: scale(0.55);
 
+          &.swiper-slide-prev{
+            transform-origin: 100% 50%;
+          }
+          &.swiper-slide-next{
+            transform-origin: 0 50%;
+          }
+          &.swiper-slide-active{
+            transform-origin: 100% 50%;
+            transform: scale(1);
+          }
         }
       }
     }

@@ -5,17 +5,37 @@
 
 
 @include mq($device){
+
+
   .swiper-block{
-    max-width: 640px;
-    margin-inline: auto;
     overflow: hidden;
+    margin-top: 15px;
+    margin-bottom: 50px;
 
     .swiper-container{
       position: relative;
 
-      .swiper-wrapper{
-        .swiper-slide{
 
+      // スライドアイテムがコンテナの幅を超えない場合は、スライド無効＆スライドアイテムを非表示
+      &.swiper-container-no-scroll{
+        overflow: visible;
+        opacity: 1;
+
+        .swiper-wrapper{
+          justify-content: center;
+        }
+
+        .swiper-button{
+          display: none;
+        }
+      }
+
+      .swiper-wrapper{
+        display: flex;
+
+        .swiper-slide{
+          width: 300px;
+          margin-inline: 7.5px;
         }
       }
     }
