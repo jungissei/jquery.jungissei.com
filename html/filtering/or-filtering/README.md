@@ -1,5 +1,5 @@
-# {demo_page_name} {demo_category_name}
+# OR検索 Filtering
 
-https://jquery.jungissei.com/{demo_category_slug}/{demo_page_slug}
+https://jquery.jungissei.com/filtering/or-filtering
 
 ## テスト
