@@ -32,8 +32,8 @@ $(function(){
       // --------------------------------------
       // 以下処理
       // --------------------------------------
-      let swiper_button_next = $this.find('.swiper-button-next'); // 次のスライドボタン要素
-      let swiper_button_prev = $this.find('.swiper-button-prev'); // 前のスライドボタン要素
+      let $swiper_button_next = $this.find('.swiper-button-next'); // 次のスライドボタン要素
+      let $swiper_button_prev = $this.find('.swiper-button-prev'); // 前のスライドボタン要素
 
       // swiper_containerのwidthを取得
       const swiper_container_width = $container.outerWidth(true);
@@ -64,19 +64,14 @@ $(function(){
         loop: true,
         centeredSlides: true,
         navigation: {
-          nextEl: swiper_button_next[0],
-          prevEl: swiper_button_prev[0]
+          nextEl: $swiper_button_next[0],
+          prevEl: $swiper_button_prev[0]
         },
         spaceBetween: 15,
         breakpoints: {
           769: {
-            width: slideWidth,
+            slidesPerView: 'auto',
             spaceBetween: 0,
-            virtual: {
-              enabled: true, // バーチャルスライドを有効にします。
-              addSlidesAfter: totalSlides, // 事前にレンダリングする枚数。スライドの枚数が入ります。
-            },
-
           }
         },
         // キーボード操作
@@ -94,6 +89,15 @@ $(function(){
       });
 
       swiperInstances.push(swiper);
+
+      // ナビゲーションボタンのクリックイベントを確認
+      $swiper_button_next.on('click', function() {
+        swiper.slideNext();
+      });
+
+      $swiper_button_prev.on('click', function() {
+        swiper.slidePrev();
+      });
     });
   }
 
