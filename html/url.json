@@ -23,5 +23,8 @@
   },{
     "category_name" : "Swiper",
     "category_slug" : "swiper"
+  },{
+    "category_name" : "Filtering",
+    "category_slug" : "filtering"
   }
 ]
