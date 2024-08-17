@@ -1,4 +1,4 @@
-# {demo_category_name}
+# Filtering
 
 ## 概要
-{demo_category_name}のデモページです。
+Filteringのデモページです。
