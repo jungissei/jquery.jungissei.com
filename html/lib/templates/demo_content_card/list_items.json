@@ -1,0 +1,99 @@
+[
+  {
+    "name": "ルーク",
+    "variety": "ボーダー・コリー",
+    "birthday": "2020-01-01",
+    "birthplace": "東京",
+    "color": ["黒", "白"],
+    "weight": "14.5",
+    "thumbnail": "/lib/img/dog1.jpg"
+  },{
+    "name": "ミア",
+    "variety": "ボーダー・コリー",
+    "birthday": "2019-02-15",
+    "birthplace": "東京",
+    "color": ["黒", "白"],
+    "weight": "12.8",
+    "thumbnail": "/lib/img/dog2.jpg"
+  },{
+    "name": "ブルノ",
+    "variety": "フレンチブルドック",
+    "birthday": "2018-03-05",
+    "birthplace": "東京",
+    "color": ["茶"],
+    "weight": "9.3",
+    "thumbnail": "/lib/img/dog3.jpg"
+  },{
+    "name": "マックス",
+    "variety": "ラブラドールレトリバー",
+    "birthday": "2021-04-20",
+    "birthplace": "東京",
+    "color": ["黒"],
+    "weight": "29.0",
+    "thumbnail": "/lib/img/dog4.jpg"
+  },{
+    "name": "チャーリー",
+    "variety": "ラブラドールレトリバー",
+    "birthday": "2017-05-10",
+    "birthplace": "東京",
+    "color": ["茶"],
+    "weight": "31.2",
+    "thumbnail": "/lib/img/dog5.jpg"
+  },{
+    "name": "ゴールディ",
+    "variety": "ゴールデンレトリバー",
+    "birthday": "2019-06-25",
+    "birthplace": "東京",
+    "color": ["黒"],
+    "weight": "32.5",
+    "thumbnail": "/lib/img/dog6.jpg"
+  },{
+    "name": "ルイ",
+    "variety": "フレンチブルドック",
+    "birthday": "2020-07-12",
+    "birthplace": "東京",
+    "color": ["黒", "白"],
+    "weight": "10.7",
+    "thumbnail": "/lib/img/dog7.jpg"
+  },{
+    "name": "ソフィー",
+    "variety": "ボルゾイ",
+    "birthday": "2018-08-30",
+    "birthplace": "東京",
+    "color": ["黒", "白", "グレー"],
+    "weight": "34.1",
+    "thumbnail": "/lib/img/dog8.jpg"
+  },{
+    "name": "オリバー",
+    "variety": "キャバリア・キング・チャールズ・スパニエル",
+    "birthday": "2022-09-17",
+    "birthplace": "東京",
+    "color": ["茶", "白", "赤"],
+    "weight": "8.9",
+    "thumbnail": "/lib/img/dog9.jpg"
+  },{
+    "name": "バディ",
+    "variety": "ビーグル",
+    "birthday": "2021-10-11",
+    "birthplace": "東京",
+    "color": ["茶", "白"],
+    "weight": "11.4",
+    "thumbnail": "/lib/img/dog10.jpg"
+  },{
+    "name": "シャドー",
+    "variety": "シベリアンハスキー",
+    "birthday": "2019-11-22",
+    "birthplace": "東京",
+    "color": ["グレー", "白"],
+    "weight": "22.0",
+    "thumbnail": "/lib/img/dog11.jpg"
+  },{
+    "name": "リリー",
+    "variety": "マルチーズ",
+    "birthday": "2018-12-05",
+    "birthplace": "東京",
+    "color": ["白"],
+    "weight": "3.6",
+    "thumbnail": "/lib/img/dog12.jpg"
+  }
+]
