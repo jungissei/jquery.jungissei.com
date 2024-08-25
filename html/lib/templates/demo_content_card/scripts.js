@@ -1,10 +1,13 @@
 $(function () {
+
+
   // JSONファイルを読み込む
   $.getJSON('/lib/templates/demo_content_card/list_items.json', function(data) {
     const result = document.getElementById('card_items');
 
-    // テンプレートの取得（<template>タグの中身を取得）
-    const template = document.getElementById('demo_content_card_item_template').innerHTML;
+    // テンプレートの取得（<script type="text/x-handlebars-template">タグの中身を取得）
+    const source = document.getElementById('demo_content_card_item_template').innerHTML;
+    const template = Handlebars.compile(source);
 
     // データを処理する関数
     function processData(item) {
@@ -24,12 +27,14 @@ $(function () {
       return {...item, formattedAge: ageString};
     }
 
-    // 各アイテムを処理してレンダリング
-    data.forEach(function(item) {
-      const processedItem = processData(item);
-      const renderedHtml = Mustache.render(template, processedItem);
-      result.innerHTML += renderedHtml;
+    // Handlebarsヘルパーの登録
+    Handlebars.registerHelper('formatAge', function(birthday) {
+      return processData({birthday: birthday}).formattedAge;
     });
+
+    // 各アイテムを処理してレンダリング
+    const renderedHtml = template({items: data});
+    result.innerHTML = renderedHtml;
 
   }).fail(function(jqXHR, textStatus, errorThrown) {
     console.error('JSONファイルの読み込みに失敗しました:', textStatus, errorThrown);

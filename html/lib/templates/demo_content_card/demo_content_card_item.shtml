@@ -1,4 +1,5 @@
-<template id="demo_content_card_item_template">
+<script id="demo_content_card_item_template" type="text/x-handlebars-template">
+  {{#each items}}
   <article
     data-name="{{ name }}"
     data-variety="{{ variety }}"
@@ -19,9 +20,10 @@
     <div class="item_meta_row2">
       <span class="item_name">{{ name }}</span>
       <span class="item_meta_bracket">
-        <span class="item_birthday">{{ formattedAge }}</span>
+        <span class="item_birthday">{{ formatAge birthday }}</span>
         <span class="item_weight">{{ weight }}kg</span>
       </span>
     </div>
   </article>
-</template>
+  {{/each}}
+</script>
