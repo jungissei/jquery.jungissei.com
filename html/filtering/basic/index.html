@@ -6,7 +6,6 @@
     <title>OR検索 | Filtering | jQuery UI LIST / Jung Issei</title>
     <!--#include virtual="/lib/inc/head_close.shtml" -->
     <!--#include virtual="/filtering/lib/head_close.shtml" -->
-    <link rel="stylesheet" href="../../lib/templates/demo_content_card/style.css">
     <link rel="stylesheet" href="./style.css">
 
   </head>
@@ -35,8 +34,28 @@
           </div>
         </div>
 
+        <section id="demo_content_card" class="page_layout layout1">
+          <div class="layout_inner">
+            <div class="layout_container">
+              <div class="layout_width">
 
-        <!--#include virtual="/lib/templates/demo_content_card/demo_content_card.shtml" -->
+                <!-- BEGIN フィルタリング -->
+                <div id="card_filter">
+                  <div id="card_filter_prefecture" class="filter_button_block">
+                    <p class="filter_button_label">都道府県で絞り込み</p>
+                    <ul class="filter_button_list" data-filter-controller-wrapper="birthplace">
+                      <li><button data-filter-birthplace="">すべて</button></li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- END フィルタリング -->
+
+                <div id="card_items" class="card_items" data-filter-list-items="dogs"></div>
+
+              </div>
+            </div>
+          </div>
+        </section>
 
       </main>
       <footer>
@@ -45,13 +64,10 @@
 
     </div>
 
-    <!--#include virtual="/lib/templates/demo_content_card/demo_content_card_item.shtml" -->
-
     <!--#include virtual="/lib/inc/body_close.shtml" -->
     <!--#include virtual="/filtering/lib/body_close.shtml" -->
-    <script src="/lib/js/handlebars/handlebars.js"></script>
-    <script src="/lib/templates/demo_content_card/scripts.js"></script>
 
+    <!--#include virtual="/lib/templates/demo_content_card/demo_content_card.shtml" -->
 
     <script src="./scripts.js"></script>
 

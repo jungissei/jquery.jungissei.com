@@ -1,7 +1,7 @@
 [
   {
-    "demo_name" : "OR検索",
-    "demo_slug" : "or-filtering",
-    "demo_description" : "OR検索のデモページ"
+    "demo_name" : "基本",
+    "demo_slug" : "basic",
+    "demo_description" : "基本のデモページ"
   }
 ]

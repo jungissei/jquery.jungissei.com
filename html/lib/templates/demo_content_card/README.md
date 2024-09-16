@@ -1,27 +1,33 @@
 # カード一覧
 
-## Assets読み込み
+## 実装
 
-CSS
+### リストアイテムテンプレート
 ```html
-<link rel="stylesheet" href="../../lib/templates/demo_content_card/style.css">
+<section id="demo_content_card" class="page_layout layout1">
+  <div class="layout_inner">
+    <div class="layout_container">
+      <div class="layout_width">
+
+        <div id="card_items" class="card_items"></div>
+
+      </div>
+    </div>
+  </div>
+</section>
 ```
 
-JavaScript
-```html
-<script src="/lib/templates/demo_content_card/mustache.js"></script>
-<script src="/lib/templates/demo_content_card/scripts.js"></script>
-```
 
-
-## SSI
-一覧セクションテンプレート
+### Assets SSI
 ```html
 <!--#include virtual="/lib/templates/demo_content_card/demo_content_card.shtml" -->
 ```
 
 
-リストアイテムテンプレート
-```html
-<!--#include virtual="/lib/templates/demo_content_card/demo_content_card_item.shtml" -->
+### Event
+```js
+$('#card_items').on('htmlContentAdded', function(event) {
+
+  // ここに処理を追加
+});
 ```

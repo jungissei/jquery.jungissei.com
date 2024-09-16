@@ -1,13 +1,39 @@
-<section id="demo_content_card" class="page_layout layout1">
-  <div class="layout_inner">
-    <div class="layout_container">
-      <div class="layout_width">
+<link rel="stylesheet" href="/lib/templates/demo_content_card/style.css">
+<script src="/lib/js/handlebars/handlebars.js"></script>
+<script src="/lib/templates/demo_content_card/scripts.js"></script>
 
-
-
-        <div id="card_items" class="card_items"></div>
-
-      </div>
+<script id="demo_content_card_item_template" type="text/x-handlebars-template">
+  {{#each items}}
+  <article
+    data-filter-name="{{ name }}"
+    data-filter-variety="{{ variety }}"
+    data-filter-birthday="{{ birthday }}"
+    data-filter-birthplace="{{ birthplace }}"
+    data-filter-color="{{ color }}"
+    data-filter-weight="{{ weight }}"
+  >
+    <div class="item_img">
+      <img src="{{ thumbnail }}" alt="">
     </div>
-  </div>
-</section>
+
+    <div class="item_meta_row1">
+      <p class="item_birthplace">{{ birthplace }}</p>
+      <p class="item_variety">{{ variety }}</p>
+    </div>
+
+    <div class="item_meta_row2">
+      <span class="item_name">{{ name }}</span>
+      <span class="item_meta_bracket">
+        <span class="item_birthday">{{ formatAge birthday }}</span>
+        <span class="item_weight">{{ weight }}kg</span>
+      </span>
+    </div>
+  </article>
+  {{/each}}
+</script>
+
+<script id="filter_button" type="text/x-handlebars-template">
+  {{#each items}}
+    <li><button data-filter-controller-{{../data_name}}="{{this}}">{{this}}</button></li>
+  {{/each}}
+</script>
