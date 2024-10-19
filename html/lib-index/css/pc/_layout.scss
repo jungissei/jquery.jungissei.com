@@ -93,6 +93,25 @@
         }
       }
     }
+
+    &.layout2{
+      .layout_inner {
+
+        .layout_container {
+          max-width: 500px;
+          width: 100%;
+          margin-right: auto;
+          margin-left: auto;
+
+          .layout_width {
+            max-width: calc(100% - 32px);
+            width: 100%;
+            margin-right: auto;
+            margin-left: auto;
+          }
+        }
+      }
+    }
   }
 
 

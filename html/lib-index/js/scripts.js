@@ -9,44 +9,6 @@
 
 
 // ----------------------------------------------------------------------------
-// Categories INDEX PAGE （TOP）
-// ----------------------------------------------------------------------------
-$(function() {
-
-  // UIカテゴリーアイテムのコンテナを取得
-  let $ui_category_items = $('[data-site-nav="ui_category_items"]');
-
-  // コンテナが存在しない場合は処理を終了
-  if ($ui_category_items.length === 0) return;
-
-  // カテゴリーアイテムのデータを取得
-  $.ajax({
-    url: '/url.json',
-    type: 'GET',
-    dataType: 'json',
-  }).done(function(category_items) {
-    // カテゴリーアイテムの追加
-    add_ui_category_items(category_items);
-  }).fail(function(error) {
-    console.error('Error:', error);
-  });
-
-  // カテゴリーアイテムを追加する関数
-  function add_ui_category_items(category_items) {
-    let html = '';
-    $.each(category_items, function() {
-      html += get_ui_category_item_template(this);
-    });
-    $ui_category_items.append(html);
-  }
-});
-
-
-
-
-
-
-// ----------------------------------------------------------------------------
 // DEMO INDEX PAGE
 // ----------------------------------------------------------------------------
 // --------------------------------------

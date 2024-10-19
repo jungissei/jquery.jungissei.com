@@ -1,87 +1,99 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <!--#include virtual="/lib/inc/head_begin.shtml" -->
-    <meta charset="UTF-8">
-    <title>jQuery Creations / Jung Issei</title>
-    <meta name="description" content="jQueryを活用したシンプルなUIデモの一覧。基本的なモーダルウィンドウやスライダーなど、学習目的で作成したデモの実例を探索。">
 
-    <!--#include virtual="/lib-index/inc/head_close.shtml" -->
-  </head>
-  <body class="dark:bg-gray-900">
-    <!--#include virtual="/lib/inc/body_begin.shtml" -->
+<head>
+  <!--#include virtual="/lib/inc/head_begin.shtml" -->
+  <meta charset="UTF-8">
+  <title>jQuery Creations / Jung Issei</title>
+  <meta name="description" content="jQueryを活用したシンプルなUIデモの一覧。基本的なモーダルウィンドウやスライダーなど、学習目的で作成したデモの実例を探索。">
 
-    <div id="wrapper">
+  <!--#include virtual="/lib-index/inc/head_close.shtml" -->
+</head>
 
-      <header>
-        <div id="part_header" class="page_layout layout1">
-          <div class="layout_inner">
-            <div class="layout_container">
-              <div class="layout_width">
+<body class="dark:bg-gray-900">
+  <!--#include virtual="/lib/inc/body_begin.shtml" -->
 
-                <div class="header_row">
-                  <h1 class="header_site_title">
-                    <!--#include virtual="/lib-index/inc/site_title_link.shtml" -->
-                  </h1>
+  <div id="wrapper">
 
-                  <!--#include virtual="/lib-index/inc/header_github_logo.shtml" -->
-                </div>
+    <header>
+      <div id="part_header" class="page_layout layout1">
+        <div class="layout_inner">
+          <div class="layout_container">
+            <div class="layout_width">
 
+              <div class="header_row">
+                <h1 class="header_site_title">
+                  <!--#include virtual="/lib-index/inc/site_title_link.shtml" -->
+                </h1>
+
+                <!--#include virtual="/lib-index/inc/header_github_logo.shtml" -->
               </div>
+
             </div>
           </div>
         </div>
-      </header>
+      </div>
+    </header>
 
-      <main>
-        <div id="top_ui" class="page_layout layout1">
-          <div class="layout_inner">
-            <div class="layout_container">
-              <div class="layout_width">
+    <main>
+      <div id="top_ui" class="page_layout layout2">
+        <div class="layout_inner">
+          <div class="layout_container">
+            <div class="layout_width">
 
-                <nav aria-label="メインナビゲーション">
+              <nav aria-label="メインナビゲーション">
 
-                  <h2 class="index_common_ttl1">jQuery Creations Categories</h2>
+                <h2 class="index_common_ttl1">jQuery Creations Categories</h2>
 
-                  <p class="index_common_txt1">このサイトは、学習目的で作成している、jQueryを中心に利用したUIのデモページを探索できます。</p>
+                <p class="index_common_txt1">このサイトは、学習目的で作成している、jQueryを中心に利用したUIのデモページを探索できます。</p>
 
-                  <ul class="ui_category_items" data-site-nav="ui_category_items"></ul>
+                <?php
+                (function () {
+                  // 現在のディレクトリを習得
+                  $current_dir = __DIR__;
+                  $json_url = $current_dir . '/url.json';
+                  $json_data = file_get_contents($json_url);
+                  $categories = json_decode($json_data, true);
 
-                </nav>
+                  if ($categories):
+                ?>
+                    <ul class="top_category_items">
+                      <?php
+                      foreach ($categories as $category):
+                        $category_name = $category['category_name'];
+                        $category_slug = $category['category_slug'];
+                      ?>
 
-              </div>
+                        <li class="category_item">
+                          <a href="/<?php echo $category_slug; ?>" class="item_link">
+                            <?php echo $category_name; ?>
+                          </a>
+                        </li>
+
+                      <?php endforeach; ?>
+                    </ul>
+                <?php
+                  endif;
+                })();
+
+                ?>
+
+              </nav>
+
             </div>
           </div>
         </div>
+      </div>
 
-      </main>
+    </main>
 
 
-      <footer>
-        <!--#include virtual="/lib-index/inc/part_copyright.shtml" -->
-      </footer>
-    </div>
+    <footer>
+      <!--#include virtual="/lib-index/inc/part_copyright.shtml" -->
+    </footer>
+  </div>
 
-    <script>
-      // カテゴリーアイテムテンプレートを取得
-      function get_ui_category_item_template(category_item) {
-        // カテゴリー名とスラッグの取得
-        let category_name = category_item.category_name,
-            category_slug = category_item.category_slug;
+  <!--#include virtual="/lib-index/inc/body_close.shtml" -->
+</body>
 
-        // UIカテゴリーアイテムのHTMLテンプレートを返す
-        return `
-          <li class="ui_category_item">
-            <div class="item_thumb">
-              <a href="/${category_slug}" class="item_link">
-                <img src="/${category_slug}/thumb.png" alt="${category_name}のデモのサムネイル画像" width="800" height="410" decoding="async">
-                <span class="item_txt">${category_name}のデモを見る</span>
-              </a>
-            </div>
-          </li>`;
-      }
-    </script>
-
-    <!--#include virtual="/lib-index/inc/body_close.shtml" -->
-  </body>
 </html>

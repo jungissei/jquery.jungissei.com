@@ -75,7 +75,8 @@
   // 汎用レイアウト
   // --------------------------------------
   .page_layout{
-    &.layout1{
+    &.layout1,
+    &.layout2{
       .layout_inner {
         .layout_container {
           .layout_width {
