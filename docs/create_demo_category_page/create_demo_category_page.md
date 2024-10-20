@@ -30,9 +30,6 @@ mkdir -p $DEST_DIR && cp -r docs/create_demo_category_page/demo/* $DEST_DIR
 }
 ```
 
-### サムネイル画像設置
-`html/{demo_category_slug}/thumb.png`
-
 
 ### コミット
 ```
