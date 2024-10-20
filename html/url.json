@@ -26,5 +26,8 @@
   },{
     "category_name" : "Filtering",
     "category_slug" : "filtering"
+  },{
+    "category_name" : "Handlebars",
+    "category_slug" : "handlebars"
   }
 ]
