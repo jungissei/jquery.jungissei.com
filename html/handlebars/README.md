@@ -1,4 +1,4 @@
-# {demo_category_name}
+# Handlebars
 
 ## 概要
-{demo_category_name}のデモページです。
+Handlebarsのデモページです。
